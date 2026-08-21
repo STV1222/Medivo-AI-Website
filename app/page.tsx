@@ -128,7 +128,15 @@ export default function Home() {
         </div>
 
         <div className="problem-editorial">
-          <div className="problem-image-slot" role="img" aria-label="Reserved space for a patient communication image"><span>01</span></div>
+          <div className="problem-image-slot">
+            <Image
+              src="/problem-patient.webp"
+              alt="An older patient at home reviewing discharge instructions"
+              fill
+              sizes="(max-width: 900px) 90vw, 47vw"
+            />
+            <span>01</span>
+          </div>
           <div className="problem-editorial-copy">
             <p className="section-label">THE COMMUNICATION GAP</p>
             <h3>The information matters most after the patient leaves.</h3>
