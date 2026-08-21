@@ -43,8 +43,18 @@ button{font:inherit}
 .problem-heading h2 span{color:#89949b}
 .problem-track{display:flex;gap:18px;padding:0 5vw 10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain}
 .problem-track::-webkit-scrollbar{display:none}
-.problem-card{flex:0 0 min(38vw,560px);min-height:330px;padding:30px 34px;background:#eceeeb;border-radius:16px;display:flex;flex-direction:column;scroll-snap-align:start;transition:background .25s,transform .25s}
+.problem-card{flex:0 0 min(38vw,560px);min-height:330px;padding:30px 34px;background:#eceeeb;border-radius:16px;display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;scroll-snap-align:start;transition:background .25s,transform .25s}
+.problem-card>*{position:relative;z-index:2}
+.problem-card:before,.problem-card:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.problem-card:before{inset:-12px;background-position:center;background-size:cover;filter:blur(9px) saturate(.78);transform:scale(1.02);z-index:0}
+.problem-card:after{background:linear-gradient(100deg,rgba(240,243,240,.91),rgba(240,243,240,.68));z-index:1}
+.problem-card:nth-child(1):before{background-image:url('/problem-preparation.webp')}
+.problem-card:nth-child(2):before{background-image:url('/problem-recovery.webp')}
+.problem-card:nth-child(3):before{background-image:url('/problem-medication.webp')}
+.problem-card:nth-child(4):before{background-image:url('/problem-follow-up.webp')}
 .problem-card:hover{background:#e7ebe7;transform:translateY(-3px)}
+.problem-card:hover:before,.problem-card:hover:after{opacity:1}
+.problem-card:hover:before{transform:scale(1.08)}
 .problem-card-index{font-size:10px;letter-spacing:.16em;color:#849094}
 .problem-card h3{font-size:clamp(28px,2.15vw,34px);font-weight:470;line-height:1;letter-spacing:-.04em;margin:38px 0 16px}
 .problem-card>p{font-size:15px;line-height:1.52;color:#7c898f;max-width:480px;margin:0}
