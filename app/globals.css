@@ -33,20 +33,32 @@ button{font:inherit}
 .hero h1{position:relative;z-index:2;font-size:clamp(62px,7.7vw,126px);line-height:.88;letter-spacing:-.073em;font-weight:540;margin:0;animation:rise 1s cubic-bezier(.22,.7,.25,1) both}
 .scroll-note{position:absolute;right:3.4vw;bottom:35px;z-index:3;font-size:9px;letter-spacing:.18em}
 .scroll-note span{margin-left:16px}
-.problem{padding:12vw 5vw 5vw;min-height:100vh;background:#eceee9}
+.problem{padding:10vw 0 9vw;min-height:100vh;background:#f5f6f3;overflow:hidden}
 .problem h2,.solution h2,.platform h2,.endoscopy h2,.value h2{font-size:clamp(55px,8vw,122px);line-height:.92;letter-spacing:-.067em;font-weight:540}
-.problem h2{max-width:1300px;margin:44px 0 8vw}
-.problem h2 em{font-family:inherit;font-weight:400;font-style:italic}
-.problem-story{display:grid;grid-template-columns:1fr 1.6fr;gap:8vw;align-items:center;margin-bottom:8vw}
-.problem-story>p{font-size:18px;line-height:1.65;max-width:520px}
-.instruction-stream{position:relative;min-height:330px}
-.instruction-stream span{position:absolute;border:1px solid var(--line);background:rgba(255,255,255,.55);padding:15px 19px;font-size:13px;box-shadow:0 22px 70px rgba(19,44,45,.08)}
-.instruction-stream span:nth-child(1){left:2%;top:7%;transform:rotate(-5deg)}
-.instruction-stream span:nth-child(2){right:3%;top:2%;transform:rotate(4deg)}
-.instruction-stream span:nth-child(3){left:24%;top:42%;transform:rotate(2deg)}
-.instruction-stream span:nth-child(4){right:4%;bottom:8%;transform:rotate(-4deg)}
-.instruction-stream span:nth-child(5){left:5%;bottom:0;transform:rotate(5deg)}
-.problem-line{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;font-size:13px}
+.problem-heading{padding:0 5vw}
+.problem-heading h2{font-family:Inter,Arial,sans-serif;font-size:clamp(42px,5.25vw,80px);line-height:1.04;letter-spacing:-.055em;font-weight:480;max-width:1320px;margin:38px 0 6vw}
+.problem-heading h2 span{color:#89949b}
+.problem-track{display:flex;gap:22px;padding:0 5vw 12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain}
+.problem-track::-webkit-scrollbar{display:none}
+.problem-card{flex:0 0 min(43vw,680px);min-height:440px;padding:38px 42px;background:#eceeeb;border-radius:18px;display:flex;flex-direction:column;scroll-snap-align:start;transition:background .25s,transform .25s}
+.problem-card:hover{background:#e7ebe7;transform:translateY(-3px)}
+.problem-card-index{font-size:10px;letter-spacing:.16em;color:#849094}
+.problem-card h3{font-size:clamp(30px,2.7vw,44px);font-weight:470;line-height:1;letter-spacing:-.045em;margin:54px 0 20px}
+.problem-card>p{font-size:17px;line-height:1.55;color:#7c898f;max-width:520px;margin:0}
+.problem-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:60px}
+.problem-tags span{padding:12px 15px;border-radius:7px;background:#dfeae6;color:#27706f;font-size:13px;line-height:1}
+.problem-card:nth-child(2) .problem-tags span{background:#e7eadc;color:#66733f}
+.problem-card:nth-child(3) .problem-tags span{background:#e6e6ef;color:#59618a}
+.problem-card:nth-child(4) .problem-tags span{background:#eee4de;color:#8a6251}
+.problem-controls{display:flex;justify-content:center;gap:12px;padding:42px 0 9vw}
+.problem-controls button{width:54px;height:54px;border:0;border-radius:50%;background:#e9ebe8;color:var(--ink);font-size:22px;cursor:pointer;transition:background .2s,transform .2s}
+.problem-controls button:hover{background:#dce2de;transform:translateY(-2px)}
+.problem-editorial{margin:0 auto;max-width:1390px;width:90%;display:grid;grid-template-columns:1.05fr .95fr;gap:8vw;align-items:center}
+.problem-image-slot{aspect-ratio:4/3;position:relative;background:#e5e7e3;border:1px solid rgba(16,37,44,.08)}
+.problem-image-slot span{position:absolute;left:-17px;bottom:20px;padding-left:14px;font-size:11px;color:#7d888b}
+.problem-image-slot span:before{content:"";position:absolute;left:0;top:-5px;width:1px;height:28px;background:#879093}
+.problem-editorial-copy h3{font-size:clamp(40px,4.5vw,70px);line-height:1.02;letter-spacing:-.055em;font-weight:480;margin:38px 0 42px}
+.problem-editorial-copy>p:last-child{font-size:17px;line-height:1.65;color:#718087;max-width:530px}
 .solution{background:var(--teal);color:white;padding:10vw 5vw 5vw}
 .solution-heading{display:grid;grid-template-columns:.65fr 1.65fr 1fr;gap:5vw;align-items:start}
 .solution-heading h2{font-size:clamp(55px,7.2vw,112px);margin:0;max-width:980px}
@@ -176,11 +188,15 @@ to{opacity:1;transform:none}
 .hero h1{font-size:clamp(49px,13vw,74px);padding:0 5vw}
 .hero-video{filter:blur(8px) saturate(.7) brightness(.76);transform:scale(1.08)}
 .scroll-note{right:5vw}
-.problem,.solution,.platform,.endoscopy,.value{padding:100px 5vw}
+.solution,.platform,.endoscopy,.value{padding:100px 5vw}
+.problem{padding:100px 0 90px}
 .problem h2,.solution h2,.platform h2,.endoscopy h2,.value h2{font-size:clamp(48px,12vw,75px)}
-.problem-story{grid-template-columns:1fr}
-.instruction-stream{min-height:290px}
-.problem-line{flex-direction:column;gap:10px}
+.problem-heading h2{font-size:clamp(38px,8vw,64px);margin-bottom:65px}
+.problem-card{flex-basis:min(78vw,580px);min-height:400px;padding:32px}
+.problem-card h3{margin-top:45px}
+.problem-controls{padding:34px 0 85px}
+.problem-editorial{grid-template-columns:1fr;gap:50px}
+.problem-editorial-copy{max-width:680px}
 .solution-heading{grid-template-columns:1fr}
 .solution-lead{margin-top:20px}
 .solution-outcome{height:780px;min-height:0;margin-top:70px}
@@ -221,7 +237,18 @@ to{opacity:1;transform:none}
 
 @media(max-width:520px){.hero{min-height:680px}
 .hero h1{font-size:49px}
-.instruction-stream span{font-size:11px;padding:12px}
+.problem-heading{padding:0 5vw}
+.problem-heading h2{font-size:38px;line-height:1.08;letter-spacing:-.045em}
+.problem-track{gap:12px}
+.problem-card{flex-basis:86vw;min-height:390px;padding:26px;border-radius:14px}
+.problem-card h3{font-size:31px}
+.problem-card>p{font-size:15px}
+.problem-tags{padding-top:45px}
+.problem-tags span{font-size:11px;padding:11px 12px}
+.problem-controls button{width:48px;height:48px}
+.problem-editorial{width:90%;gap:42px}
+.problem-editorial-copy h3{font-size:39px;margin:28px 0 30px}
+.problem-editorial-copy>p:last-child{font-size:15px}
 .workflow-visual{height:50vh}
 .spatial{transform:scale(.53)}
 .workflow-copy article{min-height:72vh;padding-top:28vh}

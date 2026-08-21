@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const workflow = [
@@ -12,6 +12,33 @@ const workflow = [
 
 const platformTabs = ["Prepare", "Review", "Preview", "Deliver"];
 
+const problemCards = [
+  {
+    step: "01",
+    title: "Preparation",
+    body: "Fasting, timing and transport requirements arrive before the procedure.",
+    tags: ["Nothing after midnight", "Arrival time", "Transport home"],
+  },
+  {
+    step: "02",
+    title: "Recovery",
+    body: "Diet, activity and symptom guidance matter most once the patient is home.",
+    tags: ["What to eat", "Activity limits", "Expected symptoms"],
+  },
+  {
+    step: "03",
+    title: "Medication",
+    body: "Dose changes and side effects are easy to confuse after a stressful visit.",
+    tags: ["Dose & timing", "Side effects", "When to restart"],
+  },
+  {
+    step: "04",
+    title: "Follow-up",
+    body: "Appointments and warning signs compete with everything else the patient has heard.",
+    tags: ["Return date", "When to seek help", "Who to contact"],
+  },
+];
+
 function Logo({ priority = false }: { priority?: boolean }) {
   return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} />;
 }
@@ -21,6 +48,7 @@ export default function Home() {
   const [platform, setPlatform] = useState(0);
   const [menu, setMenu] = useState(false);
   const [resources, setResources] = useState(false);
+  const problemTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("[data-workflow-step]");
@@ -32,6 +60,11 @@ export default function Home() {
   }, []);
 
   const closeMenu = () => { setMenu(false); setResources(false); };
+  const scrollProblems = (direction: number) => {
+    const track = problemTrackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * Math.min(track.clientWidth * 0.82, 760), behavior: "smooth" });
+  };
 
   return (
     <main>
@@ -71,15 +104,37 @@ export default function Home() {
       </section>
 
       <section className="problem" id="problem">
-        <p className="section-label">THE PROBLEM</p>
-        <h2>Important medical information is easy to <em>forget.</em></h2>
-        <div className="problem-story">
-          <p>Patients often receive preparation, recovery, medication and follow-up instructions during short and stressful clinical encounters.</p>
-          <div className="instruction-stream" aria-hidden="true">
-            <span>Nothing to eat after midnight</span><span>Arrange transport home</span><span>Medication guidance</span><span>Follow-up date</span><span>When to seek help</span>
+        <div className="problem-heading">
+          <p className="section-label">THE PROBLEM</p>
+          <h2>Patients receive important instructions in minutes.<br/><span>They are expected to remember them for days.</span></h2>
+        </div>
+
+        <div className="problem-track" ref={problemTrackRef}>
+          {problemCards.map((card) => (
+            <article className="problem-card" key={card.step}>
+              <span className="problem-card-index">{card.step}</span>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+              <div className="problem-tags">
+                {card.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="problem-controls" aria-label="Browse instruction categories">
+          <button type="button" onClick={() => scrollProblems(-1)} aria-label="Previous categories">←</button>
+          <button type="button" onClick={() => scrollProblems(1)} aria-label="Next categories">→</button>
+        </div>
+
+        <div className="problem-editorial">
+          <div className="problem-image-slot" role="img" aria-label="Reserved space for a patient communication image"><span>01</span></div>
+          <div className="problem-editorial-copy">
+            <p className="section-label">THE COMMUNICATION GAP</p>
+            <h3>The information matters most after the patient leaves.</h3>
+            <p>But patients are often left to reconstruct it from memory, paperwork and hurried conversations.</p>
           </div>
         </div>
-        <div className="problem-line"><span>Too much information.</span><span>Too little time.</span><span>Too easy to forget.</span></div>
       </section>
 
       <section className="solution" id="solution">
