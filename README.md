@@ -18,24 +18,16 @@ Live site: [medivo-ai.stevenchen38.chatgpt.site](https://medivo-ai.stevenchen38.
 - React
 - TypeScript
 - Vinext / Vite
-- CSS
 - Cloudflare-compatible server output
 
 ## Local development
 
-### Requirements
-
-- Node.js 22.13 or newer
-- npm
-
-### Install and run
+Requires Node.js 22.13 or newer and npm.
 
 ```bash
 npm ci
 npm run dev
 ```
-
-Open the local address printed by the development server.
 
 ## Production build
 

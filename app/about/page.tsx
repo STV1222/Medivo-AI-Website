@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { EditorialFooter, EditorialHeader } from "../components/EditorialChrome";
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function AboutPage() {
         <div className="editorial-copy-stack">
           <p className="editorial-lead">Medivo AI helps healthcare teams turn confirmed medical instructions into clear, personalised patient education videos.</p>
           <p>Healthcare professionals remain part of the workflow before anything is delivered. Patients receive a mobile-accessible guide they can see, hear and revisit when questions arise at home.</p>
-          <a className="editorial-text-link" href="/#product"><span>Explore the product</span><b>→</b></a>
+          <Link className="editorial-text-link" href="/#product"><span>Explore the product</span><b>→</b></Link>
         </div>
         <span className="editorial-index">02</span>
       </section>
@@ -66,7 +67,7 @@ export default function AboutPage() {
 
       <section className="editorial-close">
         <p>Let every medical explanation be truly understood.</p>
-        <a href="/team">Meet the team <span>→</span></a>
+        <Link href="/team">Meet the team <span>→</span></Link>
       </section>
 
       <EditorialFooter />

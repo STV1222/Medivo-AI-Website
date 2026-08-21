@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 function Logo() {
   return (
-    <img
+    <Image
       className="brand-logo"
       src="/medivo-logo-white-v2.png"
       alt="Medivo AI"
@@ -25,19 +27,19 @@ export function EditorialHeader() {
 
   return (
     <header className="editorial-header">
-      <a className="brand" href="/" aria-label="Medivo AI home">
+      <Link className="brand" href="/" aria-label="Medivo AI home">
         <Logo />
-      </a>
+      </Link>
       <nav className={menuOpen ? "editorial-nav open" : "editorial-nav"} aria-label="Primary navigation">
-        <a href="/#product" onClick={closeMenus}>Product</a>
-        <a href="/#solution" onClick={closeMenus}>Solution</a>
+        <Link href="/#product" onClick={closeMenus}>Product</Link>
+        <Link href="/#solution" onClick={closeMenus}>Solution</Link>
         <div className="editorial-resource-menu">
           <button onClick={() => setResourcesOpen(!resourcesOpen)} aria-expanded={resourcesOpen}>
             Resources <span>⌄</span>
           </button>
           <div className={resourcesOpen ? "editorial-resource-dropdown show" : "editorial-resource-dropdown"}>
-            <a href="/about" onClick={closeMenus}>About</a>
-            <a href="/team" onClick={closeMenus}>Team</a>
+            <Link href="/about" onClick={closeMenus}>About</Link>
+            <Link href="/team" onClick={closeMenus}>Team</Link>
           </div>
         </div>
       </nav>
@@ -61,17 +63,16 @@ export function EditorialFooter() {
   return (
     <footer>
       <div className="footer-main">
-        <a className="brand" href="/" aria-label="Medivo AI home"><Logo /></a>
+        <Link className="brand" href="/" aria-label="Medivo AI home"><Logo /></Link>
         <nav>
-          <a href="/#product">Product</a>
-          <a href="/#solution">Solution</a>
-          <div><span>Resources</span><a href="/about">About</a><a href="/team">Team</a></div>
+          <Link href="/#product">Product</Link>
+          <Link href="/#solution">Solution</Link>
+          <div><span>Resources</span><Link href="/about">About</Link><Link href="/team">Team</Link></div>
           <a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a>
         </nav>
       </div>
       <div className="footer-bottom">
         <small>© 2026 Medivo AI. All rights reserved.</small>
-        <div><a href="/terms">Terms and Conditions</a><a href="/privacy">Privacy Policy</a></div>
       </div>
     </footer>
   );

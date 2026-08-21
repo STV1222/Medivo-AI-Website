@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { EditorialFooter, EditorialHeader } from "../components/EditorialChrome";
 
 export const metadata: Metadata = {
@@ -59,7 +61,7 @@ export default function TeamPage() {
         {founders.map((founder) => (
           <article className="founder-profile" key={founder.name}>
             <div className="founder-image-wrap">
-              <img src={founder.image} alt={founder.alt} width="1200" height="1600" />
+              <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 900px) 100vw, 53vw" />
               <span>{founder.number}</span>
             </div>
             <div className="founder-copy">
@@ -83,7 +85,7 @@ export default function TeamPage() {
 
       <section className="editorial-close">
         <p>One shared goal: make important medical information easier to understand.</p>
-        <a href="/about">Why we’re here <span>→</span></a>
+        <Link href="/about">Why we’re here <span>→</span></Link>
       </section>
 
       <EditorialFooter />

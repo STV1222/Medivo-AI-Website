@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const workflow = [
   { step: "01", title: "Prepare", body: "The healthcare team prepares the relevant instructions for the patient’s procedure and recovery." },
@@ -12,7 +13,7 @@ const workflow = [
 const platformTabs = ["Prepare", "Review", "Preview", "Deliver"];
 
 function Logo({ priority = false }: { priority?: boolean }) {
-  return <img className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" loading={priority ? "eager" : "lazy"} />;
+  return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} />;
 }
 
 export default function Home() {
@@ -175,7 +176,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-main"><a className="brand" href="#top" aria-label="Medivo AI home"><Logo/></a><nav><a href="#product">Product</a><a href="#solution">Solution</a><div><span>Resources</span><a href="/about">About</a><a href="/team">Team</a></div><a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a></nav></div>
-        <div className="footer-bottom"><small>© 2026 Medivo AI. All rights reserved.</small><div><a href="/terms">Terms and Conditions</a><a href="/privacy">Privacy Policy</a></div></div>
+        <div className="footer-bottom"><small>© 2026 Medivo AI. All rights reserved.</small></div>
       </footer>
     </main>
   );
