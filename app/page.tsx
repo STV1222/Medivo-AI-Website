@@ -48,6 +48,7 @@ export default function Home() {
   const [platform, setPlatform] = useState(0);
   const [menu, setMenu] = useState(false);
   const [resources, setResources] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   const problemTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,6 +60,13 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const updateHeader = () => setHeaderScrolled(window.scrollY > 32);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
   const closeMenu = () => { setMenu(false); setResources(false); };
   const scrollProblems = (direction: number) => {
     const track = problemTrackRef.current;
@@ -68,7 +76,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="site-header">
+      <header className={headerScrolled ? "site-header scrolled" : "site-header"}>
         <a className="brand" href="#top" aria-label="Medivo AI home"><Logo priority /></a>
         <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation">
           <a href="#product" onClick={closeMenu}>Product</a>
@@ -128,13 +136,7 @@ export default function Home() {
         </div>
 
         <div className="problem-editorial">
-          <div className="problem-image-slot">
-            <Image
-              src="/problem-patient.webp"
-              alt="An older patient at home reviewing discharge instructions"
-              fill
-              sizes="(max-width: 900px) 90vw, 47vw"
-            />
+          <div className="problem-image-slot" role="img" aria-label="An older patient at home reviewing discharge instructions">
             <span>01</span>
           </div>
           <div className="problem-editorial-copy">
