@@ -204,27 +204,18 @@ export default function Home() {
           </div>
 
           <div className="patient-phone">
-            <div className="phone-screen">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/medivo-patient-video-poster.webp"
-                aria-label="A patient education video playing on a phone"
-              >
-                <source src="/medivo-patient-video.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <Image
-              className="phone-frame"
-              src="/iphone-frame-purple.png"
-              alt=""
-              fill
-              sizes="(max-width: 520px) 300px, (max-width: 900px) 330px, 410px"
-              aria-hidden="true"
-            />
+            <video
+              className="patient-phone-demo"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/medivo-phone-demo-poster.png"
+              aria-label="A patient education video playing on a phone"
+            >
+              <source src="/medivo-phone-demo.webm" type="video/webm" />
+            </video>
           </div>
 
           <span className="solution-format">PERSONALISED VIDEO · MOBILE LINK</span>
