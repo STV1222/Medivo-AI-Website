@@ -162,20 +162,27 @@ export default function Home() {
           </div>
 
           <div className="patient-phone">
-            <div className="phone-status"><span>9:41</span><span>● ● ●</span></div>
-            <div className="phone-film">
-              <Logo/>
-              <span className="phone-kicker">YOUR RECOVERY GUIDE</span>
-              <div className="phone-play" aria-hidden="true"><span>▶</span></div>
-              <div className="phone-subtitle">What to expect after your procedure</div>
+            <div className="phone-screen">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/medivo-patient-video-poster.webp"
+                aria-label="A patient education video playing on a phone"
+              >
+                <source src="/medivo-patient-video.mp4" type="video/mp4" />
+              </video>
             </div>
-            <div className="phone-details">
-              <span>ENDOSCOPY · AFTERCARE</span>
-              <h3>Your recovery guide</h3>
-              <p>Clear instructions for recovery, medication and follow-up.</p>
-              <div className="phone-progress"><i/></div>
-              <div className="phone-meta"><span>01:12</span><span>04:18</span></div>
-            </div>
+            <Image
+              className="phone-frame"
+              src="/iphone-frame.webp"
+              alt=""
+              fill
+              sizes="(max-width: 520px) 280px, (max-width: 900px) 310px, 375px"
+              aria-hidden="true"
+            />
           </div>
 
           <span className="solution-format">PERSONALISED VIDEO · MOBILE LINK</span>

@@ -86,26 +86,12 @@ button{font:inherit}
 .solution-message-index,.solution-format{font-size:9px;letter-spacing:.19em;font-weight:700}
 .solution-message>p{font-size:clamp(38px,4.8vw,73px);line-height:.98;letter-spacing:-.055em;margin:32px 0 70px}
 .solution-proof{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.35);padding-top:17px;gap:25px;font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
-.patient-phone{position:absolute;width:min(28vw,382px);height:min(52vw,700px);min-height:610px;right:10vw;top:50%;transform:translateY(-50%) rotate(2.5deg);border:1px solid rgba(255,255,255,.36);border-radius:42px;background:#f3f4ef;color:var(--ink);padding:11px;box-shadow:0 55px 120px rgba(0,15,19,.5);transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.patient-phone{position:absolute;width:min(28vw,375px);aspect-ratio:1/2;right:10vw;top:50%;transform:translateY(-50%) rotate(2.5deg);filter:drop-shadow(0 55px 65px rgba(0,15,19,.48));transition:transform .65s cubic-bezier(.2,.7,.2,1)}
 .solution-outcome:hover .patient-phone{transform:translateY(-52%) rotate(.5deg)}
-.phone-status{height:27px;display:flex;justify-content:space-between;align-items:center;padding:0 15px;font-size:8px;color:#4e6267}
-.phone-film{height:53%;position:relative;overflow:hidden;background:radial-gradient(circle at 70% 27%,rgba(190,233,222,.9),transparent 22%),linear-gradient(145deg,#0a2e36,#2f7e7d 55%,#a8d2c5);color:white;padding:23px}
-.phone-film:after{content:"";position:absolute;width:170%;height:80%;left:-30%;bottom:-53%;border:1px solid rgba(255,255,255,.22);border-radius:50%}
-.phone-film>.brand-logo{width:95px;position:relative;z-index:2}
-.phone-kicker{position:absolute;left:23px;top:68px;font-size:7px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
-.phone-play{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:66px;height:66px;border:0;border-radius:50%;background:#fff;color:var(--teal);display:grid;place-items:center;cursor:pointer;transition:transform .25s,background .25s}
-.phone-play:hover{transform:translate(-50%,-50%) scale(1.06);background:#d9f0e9}
-.phone-play span{padding-left:3px}
-.phone-subtitle{position:absolute;left:23px;right:23px;bottom:23px;border-left:2px solid #d4f1e8;padding-left:11px;font-size:12px;line-height:1.35;z-index:2}
-.phone-details{padding:22px 17px}
-.phone-details>span{font-size:7px;letter-spacing:.15em;color:var(--teal);font-weight:700}
-.phone-details h3{font-size:clamp(22px,2.2vw,33px);line-height:1;letter-spacing:-.045em;margin:18px 0 12px}
-.phone-details p{font-size:11px;line-height:1.5;color:#607177;margin:0 0 27px}
-.phone-progress{height:2px;background:#ced8d4;position:relative}
-.phone-progress i{display:block;width:28%;height:100%;background:var(--teal);animation:solutionProgress 4.5s ease-in-out infinite alternate}
-.phone-meta{display:flex;justify-content:space-between;margin-top:9px;font-size:8px;color:#83908f}
+.phone-screen{position:absolute;left:10.2%;right:10.2%;top:6.35%;bottom:5.8%;z-index:1;overflow:hidden;border-radius:13% / 6%;background:#061b24;display:grid;place-items:center}
+.phone-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#061b24}
+.phone-frame{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;object-fit:fill;mix-blend-mode:multiply;pointer-events:none;user-select:none}
 .solution-format{position:absolute;right:3vw;bottom:3vw;color:rgba(255,255,255,.68);writing-mode:vertical-rl}
-@keyframes solutionProgress{from{width:24%}to{width:62%}}
 .workflow{display:grid;grid-template-columns:1.05fr .95fr;background:#061b24;color:white;position:relative}
 .workflow-visual{height:100vh;position:sticky;top:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 46%,#123e48 0,transparent 45%)}
 .workflow-copy{padding-top:22vh}
@@ -219,7 +205,7 @@ to{opacity:1;transform:none}
 .solution-message{left:7vw;top:70px;transform:none;width:75%}
 .solution-message>p{font-size:42px;margin:24px 0 35px}
 .solution-proof{max-width:440px}
-.patient-phone{width:310px;height:570px;min-height:0;right:7vw;top:auto;bottom:-105px;transform:rotate(2deg)}
+.patient-phone{width:310px;right:7vw;top:auto;bottom:-105px;transform:rotate(2deg)}
 .solution-outcome:hover .patient-phone{transform:translateY(-8px) rotate(.5deg)}
 .solution-format{right:4vw;bottom:4vw}
 .workflow{display:block}
@@ -282,12 +268,8 @@ to{opacity:1;transform:none}
 .solution-message{left:5vw;right:5vw;width:auto}
 .solution-message>p{font-size:37px}
 .solution-proof{grid-template-columns:1fr;gap:10px}
-.patient-phone{width:280px;height:520px;right:50%;bottom:-82px;transform:translateX(50%) rotate(1.5deg);border-radius:34px}
+.patient-phone{width:280px;right:50%;bottom:-82px;transform:translateX(50%) rotate(1.5deg)}
 .solution-outcome:hover .patient-phone{transform:translateX(50%) translateY(-6px) rotate(0)}
-.phone-film{height:50%}
-.phone-details{padding:18px 14px}
-.phone-details h3{font-size:24px;margin:14px 0 9px}
-.phone-details p{margin-bottom:20px}
 .solution-format{display:none}
 }
 
@@ -295,8 +277,7 @@ to{opacity:1;transform:none}
 .hero h1{animation:none}
 .hero-video{display:none}
 .plane,.mini-phone{transition:none}
-.patient-phone,.phone-play{transition:none}
-.phone-progress i{animation:none}
+.patient-phone{transition:none}
 }
 
 /* About and team editorial pages */
