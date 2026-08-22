@@ -79,7 +79,7 @@ export default function TeamPage() {
       <section className="team-principle">
         <p className="editorial-kicker">OUR APPROACH</p>
         <h2>Build with clinical teams. Validate the workflow. Keep patients at the centre.</h2>
-        <p>We are developing Medivo AI through focused product work and hospital pilot conversations, beginning with clearly defined education scenarios rather than broad, unsupported claims.</p>
+        <p>We are developing Medivo AI through focused product work and clinical collaboration, beginning with clearly defined education scenarios rather than broad, unsupported claims.</p>
         <span className="editorial-index">04</span>
       </section>
 

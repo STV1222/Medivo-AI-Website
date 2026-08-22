@@ -59,7 +59,7 @@ export default function AboutPage() {
           <h2>Starting focused. Learning with clinical teams.</h2>
         </div>
         <div className="editorial-copy-stack">
-          <p className="editorial-lead">Medivo AI is currently developing its product prototype and hospital pilot partnerships.</p>
+          <p className="editorial-lead">Medivo AI is currently developing its product prototype with healthcare teams.</p>
           <p>We are beginning with defined patient education workflows, including endoscopy, to understand clinical fit, healthcare-professional review, and the patient experience before expanding further.</p>
         </div>
         <span className="editorial-index">04</span>
