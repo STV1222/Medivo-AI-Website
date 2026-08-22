@@ -219,10 +219,10 @@ export default function Home() {
             </div>
             <Image
               className="phone-frame"
-              src="/iphone-frame.webp"
+              src="/iphone-frame-purple.png"
               alt=""
               fill
-              sizes="(max-width: 520px) 280px, (max-width: 900px) 310px, 375px"
+              sizes="(max-width: 520px) 300px, (max-width: 900px) 330px, 410px"
               aria-hidden="true"
             />
           </div>

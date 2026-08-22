@@ -86,10 +86,10 @@ button{font:inherit}
 .solution-message-index,.solution-format{font-size:9px;letter-spacing:.19em;font-weight:700}
 .solution-message>p{font-size:clamp(38px,4.8vw,73px);line-height:.98;letter-spacing:-.055em;margin:32px 0 70px}
 .solution-proof{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.35);padding-top:17px;gap:25px;font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
-.patient-phone{position:absolute;width:min(28vw,375px);aspect-ratio:1/2;right:10vw;top:50%;transform:translateY(-50%) rotate(2.5deg);filter:drop-shadow(0 55px 65px rgba(0,15,19,.48));transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.patient-phone{position:absolute;width:min(30vw,410px);aspect-ratio:855/1721;right:9vw;top:50%;transform:translateY(-50%) rotate(2.5deg);filter:drop-shadow(0 55px 65px rgba(0,15,19,.48));transition:transform .65s cubic-bezier(.2,.7,.2,1)}
 .solution-outcome:hover .patient-phone{transform:translateY(-52%) rotate(.5deg)}
-.phone-screen{position:absolute;left:10.2%;right:10.2%;top:6.35%;bottom:5.8%;z-index:1;overflow:hidden;border-radius:13% / 6%;background:#061b24;display:grid;place-items:center}
-.phone-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#061b24}
+.phone-screen{position:absolute;left:5.85%;right:5.85%;top:2.38%;bottom:2.5%;z-index:1;overflow:hidden;border-radius:12.3% / 5.8%;background:#061b24;display:grid;place-items:center}
+.phone-screen video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;background:#061b24}
 .phone-frame{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}
 .solution-format{position:absolute;right:3vw;bottom:3vw;color:rgba(255,255,255,.68);writing-mode:vertical-rl}
 .workflow{display:grid;grid-template-columns:1.05fr .95fr;background:#061b24;color:white;position:relative}
