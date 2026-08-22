@@ -189,6 +189,7 @@ export default function Home() {
               poster="/medivo-phone-demo-poster.png"
               aria-label="A patient education video playing on a phone"
             >
+              <source src="/medivo-phone-demo.mp4" type="video/mp4" />
               <source src="/medivo-phone-demo.webm" type="video/webm" />
             </video>
           </div>
