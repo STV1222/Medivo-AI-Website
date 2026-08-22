@@ -33,6 +33,7 @@ export function EditorialHeader() {
       <nav className={menuOpen ? "editorial-nav open" : "editorial-nav"} aria-label="Primary navigation">
         <Link href="/#product" onClick={closeMenus}>Product</Link>
         <Link href="/#solution" onClick={closeMenus}>Solution</Link>
+        <Link href="/#pilot" onClick={closeMenus}>Pilot</Link>
         <div className="editorial-resource-menu">
           <button onClick={() => setResourcesOpen(!resourcesOpen)} aria-expanded={resourcesOpen}>
             Resources <span>⌄</span>
@@ -67,6 +68,7 @@ export function EditorialFooter() {
         <nav>
           <Link href="/#product">Product</Link>
           <Link href="/#solution">Solution</Link>
+          <Link href="/#pilot">Pilot</Link>
           <div><span>Resources</span><Link href="/about">About</Link><Link href="/team">Team</Link></div>
           <a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a>
         </nav>

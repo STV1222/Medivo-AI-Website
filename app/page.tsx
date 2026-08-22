@@ -12,6 +12,47 @@ const workflow = [
 
 const platformTabs = ["Prepare", "Review", "Preview", "Deliver"];
 
+const assurancePoints = [
+  {
+    number: "01",
+    title: "Clinician-reviewed before delivery",
+    body: "The workflow keeps healthcare professionals in control of the instructions, patient details and final education experience.",
+  },
+  {
+    number: "02",
+    title: "Built around approved content",
+    body: "Medivo AI is designed to work from an organisation's established information, so videos stay aligned with local guidance.",
+  },
+  {
+    number: "03",
+    title: "Clear for patients and families",
+    body: "Patients receive guidance in plain language, with a visual format they can revisit after the appointment.",
+  },
+];
+
+const pilotSteps = [
+  {
+    number: "01",
+    title: "Choose one pathway",
+    body: "Start with a defined education workflow such as endoscopy preparation or discharge recovery.",
+  },
+  {
+    number: "02",
+    title: "Map the source material",
+    body: "Convert existing instructions, review points and escalation guidance into a structured video brief.",
+  },
+  {
+    number: "03",
+    title: "Review with the care team",
+    body: "Healthcare professionals confirm the message before anything is delivered to a patient.",
+  },
+  {
+    number: "04",
+    title: "Learn from usage",
+    body: "Use the pilot to understand fit, patient questions and where video education can expand next.",
+  },
+];
+
 const problemCards = [
   {
     step: "01",
@@ -81,6 +122,7 @@ export default function Home() {
         <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation">
           <a href="#product" onClick={closeMenu}>Product</a>
           <a href="#solution" onClick={closeMenu}>Solution</a>
+          <a href="#pilot" onClick={closeMenu}>Pilot</a>
           <div className="resource-menu">
             <button onClick={() => setResources(!resources)} aria-expanded={resources}>Resources <span>⌄</span></button>
             <div className={resources ? "resource-dropdown show" : "resource-dropdown"}>
@@ -220,6 +262,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="assurance" aria-label="Medivo AI governance and delivery principles">
+        <div className="assurance-panel">
+          <div className="assurance-copy">
+            <p className="section-label">CLINICAL WORKFLOW</p>
+            <h2>Designed for healthcare teams that need control, not guesswork.</h2>
+            <p>Medivo AI positions artificial intelligence inside a reviewed workflow, helping teams scale patient education while keeping the source information, tone and delivery accountable.</p>
+          </div>
+          <div className="assurance-grid">
+            {assurancePoints.map((item) => (
+              <article key={item.number}>
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="endoscopy">
         <h2>Support patients before and after their procedure.</h2>
         <div className="journey">
@@ -227,6 +288,25 @@ export default function Home() {
           <article><span>02</span><h3>At the hospital</h3><p>Healthcare professionals confirm the relevant instructions.</p></article>
           <article><span>03</span><h3>After</h3><p>Recovery, diet, medication and follow-up guidance.</p></article>
           <article><span>04</span><h3>At home</h3><p>Patients and families revisit the information when questions arise.</p></article>
+        </div>
+      </section>
+
+      <section className="pilot" id="pilot">
+        <div className="section-head">
+          <div>
+            <p className="section-label">PILOT PATH</p>
+            <h2>Start with one care journey. Build evidence from there.</h2>
+          </div>
+          <p>For hospitals and clinics exploring AI-assisted education, Medivo AI starts small: one pathway, reviewed content and a measurable patient experience.</p>
+        </div>
+        <div className="pilot-timeline">
+          {pilotSteps.map((item) => (
+            <article key={item.number}>
+              <span>{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -241,8 +321,16 @@ export default function Home() {
         <p className="value-close">Designed to support healthcare teams—not replace the conversations that matter.</p>
       </section>
 
+      <section className="cta-band">
+        <div>
+          <p className="section-label">WORK WITH MEDIVO AI</p>
+          <h2>Bring patient education video into a real care pathway.</h2>
+        </div>
+        <a className="button button-light" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Pilot">Discuss a pilot <span>↗</span></a>
+      </section>
+
       <footer>
-        <div className="footer-main"><a className="brand" href="#top" aria-label="Medivo AI home"><Logo/></a><nav><a href="#product">Product</a><a href="#solution">Solution</a><div><span>Resources</span><a href="/about">About</a><a href="/team">Team</a></div><a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a></nav></div>
+        <div className="footer-main"><a className="brand" href="#top" aria-label="Medivo AI home"><Logo/></a><nav><a href="#product">Product</a><a href="#solution">Solution</a><a href="#pilot">Pilot</a><div><span>Resources</span><a href="/about">About</a><a href="/team">Team</a></div><a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a></nav></div>
         <div className="footer-bottom"><small>© 2026 Medivo AI. All rights reserved.</small></div>
       </footer>
     </main>
