@@ -90,7 +90,7 @@ button{font:inherit}
 .solution-outcome:hover .patient-phone{transform:translateY(-52%) rotate(.5deg)}
 .phone-screen{position:absolute;left:10.2%;right:10.2%;top:6.35%;bottom:5.8%;z-index:1;overflow:hidden;border-radius:13% / 6%;background:#061b24;display:grid;place-items:center}
 .phone-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#061b24}
-.phone-frame{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;object-fit:fill;mix-blend-mode:multiply;pointer-events:none;user-select:none}
+.phone-frame{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}
 .solution-format{position:absolute;right:3vw;bottom:3vw;color:rgba(255,255,255,.68);writing-mode:vertical-rl}
 .workflow{display:grid;grid-template-columns:1.05fr .95fr;background:#061b24;color:white;position:relative}
 .workflow-visual{height:100vh;position:sticky;top:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 46%,#123e48 0,transparent 45%)}
