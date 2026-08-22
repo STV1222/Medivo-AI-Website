@@ -38,8 +38,7 @@ button{font:inherit}
 .problem{padding:10vw 0 9vw;min-height:100vh;background:#f5f6f3;overflow:hidden}
 .problem h2,.solution h2,.platform h2,.endoscopy h2,.value h2{font-size:clamp(55px,8vw,122px);line-height:.92;letter-spacing:-.067em;font-weight:540}
 .problem-heading{padding:0 5vw;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
-.problem-heading .section-label{margin:0}
-.problem-heading h2{font-family:Inter,Arial,sans-serif;font-size:clamp(30px,3.7vw,42px);line-height:1.1;letter-spacing:-.04em;font-weight:480;max-width:1160px;margin:20px 0 4.8vw}
+.problem-heading h2{font-family:Inter,Arial,sans-serif;font-size:clamp(30px,3.7vw,42px);line-height:1.1;letter-spacing:-.04em;font-weight:480;max-width:1160px;margin:0 0 4.8vw}
 .problem-heading h2 span{color:#89949b}
 .problem-track{display:flex;gap:18px;padding:0 5vw 10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain}
 .problem-track::-webkit-scrollbar{display:none}
@@ -74,12 +73,12 @@ button{font:inherit}
 .problem-image-slot{aspect-ratio:4/3;position:relative;overflow:hidden;background:#e5e7e3 url('/problem-patient.webp') center/cover no-repeat;border:1px solid rgba(16,37,44,.08)}
 .problem-image-slot span{position:absolute;left:-17px;bottom:20px;padding-left:14px;font-size:11px;color:#7d888b}
 .problem-image-slot span:before{content:"";position:absolute;left:0;top:-5px;width:1px;height:28px;background:#879093}
-.problem-editorial-copy h3{font-size:clamp(40px,4.5vw,70px);line-height:1.02;letter-spacing:-.055em;font-weight:480;margin:38px 0 42px}
+.problem-editorial-copy h3{font-size:clamp(40px,4.5vw,70px);line-height:1.02;letter-spacing:-.055em;font-weight:480;margin:0 0 42px}
 .problem-editorial-copy>p:last-child{font-size:17px;line-height:1.65;color:#718087;max-width:530px}
 .solution{background:var(--teal);color:white;padding:10vw 5vw 5vw}
-.solution-heading{display:grid;grid-template-columns:.65fr 1.65fr 1fr;gap:5vw;align-items:start}
-.solution-heading h2{font-size:clamp(55px,7.2vw,112px);margin:0;max-width:980px}
-.solution-lead{font-size:17px;line-height:1.65;color:rgba(255,255,255,.74);max-width:450px;margin:8px 0 0}
+.solution-heading{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.solution-heading h2{font-family:Inter,Arial,sans-serif;font-size:clamp(30px,3.7vw,42px);line-height:1.1;letter-spacing:-.04em;font-weight:480;max-width:1160px;margin:0}
+.solution-lead{font-size:15px;line-height:1.6;color:rgba(255,255,255,.74);max-width:620px;margin:20px 0 0}
 .solution-outcome{height:min(67vw,850px);min-height:680px;margin-top:8vw;position:relative;overflow:hidden;background:radial-gradient(circle at 67% 42%,rgba(181,230,215,.36),transparent 18%),linear-gradient(132deg,#082a32 0%,#0f4b50 48%,#86b8ac 100%);isolation:isolate}
 .solution-outcome:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,24,30,.92) 0%,rgba(3,27,33,.58) 38%,rgba(4,31,37,.08) 67%),linear-gradient(0deg,rgba(3,20,26,.42),transparent 40%);z-index:-1}
 .solution-outcome:after{content:"";position:absolute;width:56vw;height:56vw;min-width:760px;min-height:760px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-19vw;top:-16vw;box-shadow:0 0 0 9vw rgba(255,255,255,.025),0 0 0 18vw rgba(255,255,255,.018);z-index:-1}
@@ -111,7 +110,7 @@ button{font:inherit}
 .workflow-visual{height:100vh;position:sticky;top:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 46%,#123e48 0,transparent 45%)}
 .workflow-copy{padding-top:22vh}
 .workflow-intro{padding:0 8vw 12vh 5vw}
-.workflow-intro h2{font-size:clamp(48px,5vw,78px);line-height:.98;letter-spacing:-.057em;margin:30px 0}
+.workflow-intro h2{font-size:clamp(48px,5vw,78px);line-height:.98;letter-spacing:-.057em;margin:0}
 .workflow-copy article{min-height:88vh;padding:25vh 9vw 10vh 5vw}
 .workflow-copy h3{font-size:clamp(48px,5.5vw,82px);line-height:1;letter-spacing:-.055em;margin:30px 0}
 .workflow-copy article>p:last-child{color:rgba(255,255,255,.62);font-size:17px;line-height:1.6;max-width:480px}
@@ -145,7 +144,7 @@ button{font:inherit}
 .step-indicator .active i{height:46px;background:#89d7d3}
 .platform{padding:11vw 5vw;background:var(--warm)}
 .section-head{display:grid;grid-template-columns:2fr 1fr;align-items:end;margin-bottom:6vw}
-.section-head h2{margin:35px 0 0}
+.section-head h2{margin:0}
 .section-head>p{font-size:17px;line-height:1.6;max-width:430px}
 .platform-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .platform-tabs button{border:0;border-right:1px solid var(--line);background:none;padding:20px;text-align:left;font-size:14px;cursor:pointer;transition:.25s}
@@ -169,7 +168,7 @@ button{font:inherit}
 .app-preview>b{display:block;font-size:22px;margin:25px 0 8px}
 .app-preview p{color:#758286}
 .endoscopy{background:#dbe8e3;padding:11vw 5vw}
-.endoscopy h2{max-width:1200px;margin:40px 0 8vw}
+.endoscopy h2{max-width:1200px;margin:0 0 8vw}
 .journey{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .journey article{padding:25px 22px 65px;border-right:1px solid var(--line);min-height:320px}
 .journey article:first-child{border-left:1px solid var(--line)}
@@ -177,7 +176,7 @@ button{font:inherit}
 .journey h3{font-size:35px;margin:80px 0 20px}
 .journey p{font-size:14px;line-height:1.6;color:#596c70}
 .value{background:#f1f1eb;padding:11vw 5vw 6vw}
-.value>h2{max-width:1250px;margin:40px 0 8vw}
+.value>h2{max-width:1250px;margin:0 0 8vw}
 .value-list{border-top:1px solid var(--line)}
 .value-list article{display:grid;grid-template-columns:70px 1fr 1fr;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
 .value-list h3{font-size:clamp(27px,3vw,43px);letter-spacing:-.04em;margin:0}
@@ -214,7 +213,7 @@ to{opacity:1;transform:none}
 .problem-controls{padding:28px 0 72px}
 .problem-editorial{grid-template-columns:1fr;gap:50px}
 .problem-editorial-copy{max-width:680px}
-.solution-heading{grid-template-columns:1fr}
+.solution-heading h2{font-size:clamp(30px,4.8vw,38px)}
 .solution-lead{margin-top:20px}
 .solution-outcome{height:780px;min-height:0;margin-top:70px}
 .solution-message{left:7vw;top:70px;transform:none;width:75%}
@@ -264,7 +263,7 @@ to{opacity:1;transform:none}
 .problem-tags span{font-size:11px;padding:11px 12px}
 .problem-controls button{width:44px;height:44px}
 .problem-editorial{width:90%;gap:42px}
-.problem-editorial-copy h3{font-size:39px;margin:28px 0 30px}
+.problem-editorial-copy h3{font-size:39px;margin:0 0 30px}
 .problem-editorial-copy>p:last-child{font-size:15px}
 .workflow-visual{height:50vh}
 .spatial{transform:scale(.53)}
