@@ -195,7 +195,6 @@ export default function Home() {
 
         <div className="solution-outcome" aria-label="A Medivo AI endoscopy recovery guide delivered to a patient’s phone">
           <div className="solution-message">
-            <span className="solution-message-index">01 / PATIENT EXPERIENCE</span>
             <p>From a stressful conversation to a calm, visual guide.</p>
             <div className="solution-proof">
               <span>CLINICIAN-REVIEWED</span>
@@ -217,8 +216,6 @@ export default function Home() {
               <source src="/medivo-phone-demo.webm" type="video/webm" />
             </video>
           </div>
-
-          <span className="solution-format">PERSONALISED VIDEO · MOBILE LINK</span>
         </div>
       </section>
 
