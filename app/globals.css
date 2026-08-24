@@ -29,7 +29,7 @@ button{font:inherit}
 .menu-button{display:none;background:none;border:0;color:white}
 .section-label{font-size:10px;letter-spacing:.19em;font-weight:700;text-transform:uppercase}
 .section-eyebrow{font-size:10px;line-height:1;letter-spacing:.19em;font-weight:700;text-transform:uppercase;color:var(--teal);margin:0 0 30px}
-.problem h2 span,.solution h2 span,.platform h2 span,.endoscopy h2 span,.value h2 span,.workflow h2 span{color:#89949b}
+.muted-line,.problem h2 span,.solution h2 span,.platform h2 span,.endoscopy h2 span,.value h2 span,.workflow h2 span{color:#89949b}
 .hero{height:100svh;min-height:640px;position:relative;overflow:hidden;color:white;display:grid;place-items:center;text-align:center;background:#071b20}
 .hero-film{position:absolute;inset:-16px;background:#071b20 url('/medivo-hero-poster.webp') center/cover no-repeat;overflow:hidden}
 .hero-video{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:blur(9px) saturate(.72) brightness(.8);transform:scale(1.055);will-change:transform}
@@ -81,9 +81,10 @@ button{font:inherit}
 .solution-heading .section-eyebrow{grid-column:1/-1}
 .solution-heading h2{font-family:Inter,Arial,sans-serif;font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);max-width:620px;margin:0}
 .solution-lead{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);max-width:620px;margin:0}
-.solution-outcome{height:min(67vw,850px);min-height:680px;position:relative;overflow:hidden;background:#10252c;border:1px solid rgba(16,37,44,.08);border-radius:var(--radius);isolation:isolate}
+.solution-outcome{height:min(67vw,850px);min-height:680px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(11,31,37,.98),rgba(11,31,37,.86) 38%,rgba(33,91,90,.54) 39%,rgba(33,91,90,.3) 54%,rgba(116,106,72,.38) 55%,rgba(18,39,42,.92)),linear-gradient(135deg,#071b20 0%,#183b3c 36%,#4d625b 62%,#111d20 100%);border:1px solid rgba(16,37,44,.08);border-radius:var(--radius);isolation:isolate}
 .solution-message{position:absolute;left:4vw;top:50%;transform:translateY(-50%);width:min(39vw,570px)}
 .solution-message>p{font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);margin:0 0 70px;color:white}
+.solution-message .muted-line{color:rgba(255,255,255,.56)}
 .solution-proof{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.22);padding-top:17px;gap:25px;font-size:9px;letter-spacing:.16em;color:rgba(255,255,255,.65)}
 .patient-phone{position:absolute;width:min(29vw,410px);aspect-ratio:792/1122;right:9vw;top:50%;transform:translateY(-50%);filter:drop-shadow(0 55px 65px rgba(0,15,19,.48))}
 .patient-phone-demo{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:transparent}
@@ -147,7 +148,7 @@ button{font:inherit}
 .platform-tabs button{border:0;border-right:1px solid var(--line);background:none;padding:20px;text-align:left;font-size:14px;cursor:pointer;transition:.25s}
 .platform-tabs button span{font-size:9px;color:var(--teal);margin-right:15px}
 .platform-tabs button.active{background:#d8e8e3}
-.platform-window{height:min(61vw,760px);display:grid;grid-template-columns:190px 1fr;background:linear-gradient(180deg,rgba(245,238,224,.82),rgba(245,238,224,.18) 42%,rgba(98,130,142,.36) 43%,rgba(98,130,142,.18) 55%,rgba(198,176,126,.52) 56%,rgba(219,202,157,.76)),linear-gradient(135deg,#eff3ef 0%,#f4dfc9 36%,#cadad7 62%,#b9c8b8 100%);border:1px solid var(--line);box-shadow:0 30px 90px rgba(10,39,40,.1);border-radius:var(--radius);overflow:hidden}
+.platform-window{height:min(61vw,760px);display:grid;grid-template-columns:190px 1fr;background:var(--widget);border:1px solid var(--line);box-shadow:0 30px 90px rgba(10,39,40,.1);border-radius:var(--radius);overflow:hidden}
 .app-nav{background:#0a222a;color:white;padding:28px;display:flex;flex-direction:column;gap:30px}
 .app-nav span{display:flex;align-items:center}
 .app-nav .brand-logo{width:112px}

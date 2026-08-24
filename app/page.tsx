@@ -140,7 +140,7 @@ export default function Home() {
             <span>01</span>
           </div>
           <div className="problem-editorial-copy">
-            <h3>The information matters most after the patient leaves.</h3>
+            <h3>The information matters most<br/><span className="muted-line">after the patient leaves.</span></h3>
             <p>But patients are often left to reconstruct it from memory, paperwork and hurried conversations.</p>
           </div>
         </div>
@@ -149,13 +149,13 @@ export default function Home() {
       <section className="solution" id="solution">
         <div className="solution-heading">
           <p className="section-eyebrow">Our solution</p>
-          <h2>Guidance that stays with the patient.</h2>
+          <h2>Guidance that stays<br/><span className="muted-line">with the patient.</span></h2>
           <p className="solution-lead">Medivo AI turns confirmed medical instructions into a clear, personalised video patients can watch—and revisit—from their phone.</p>
         </div>
 
         <div className="solution-outcome" aria-label="A Medivo AI endoscopy recovery guide delivered to a patient’s phone">
           <div className="solution-message">
-            <p>From a stressful conversation to a calm, visual guide.</p>
+            <p>From a stressful conversation<br/><span className="muted-line">to a calm, visual guide.</span></p>
             <div className="solution-proof">
               <span>CLINICIAN-REVIEWED</span>
               <span>AVAILABLE AT HOME</span>
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       <section className="workflow" id="product">
-        <div className="workflow-intro"><p className="section-eyebrow">Product workflow</p><h2>From clinical instruction to patient understanding.</h2></div>
+        <div className="workflow-intro"><p className="section-eyebrow">Product workflow</p><h2>From clinical instruction<br/><span className="muted-line">to patient understanding.</span></h2></div>
         <div className="workflow-body">
           <div className="workflow-visual">
           <div className={`workflow-showcase stage-${active}`} aria-hidden="true">
