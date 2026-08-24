@@ -38,6 +38,7 @@ export function EditorialHeader() {
             Resources <span>⌄</span>
           </button>
           <div className={resourcesOpen ? "editorial-resource-dropdown show" : "editorial-resource-dropdown"}>
+            <span className="resource-dropdown-label">Resources</span>
             <Link href="/about" onClick={closeMenus}>About</Link>
             <Link href="/team" onClick={closeMenus}>Team</Link>
           </div>
