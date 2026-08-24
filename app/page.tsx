@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const workflow = [
-  { step: "01", title: "Prepare", body: "The healthcare team prepares the relevant instructions for the patient’s procedure and recovery." },
-  { step: "02", title: "Review", body: "A healthcare professional checks the patient information and confirms the content before delivery." },
-  { step: "03", title: "Create", body: "Medivo AI turns the confirmed instructions into a clear patient education video." },
+  { step: "01", title: "Prepare", body: "Select the medical field and care pathway, then add the relevant instructions for the patient’s procedure and recovery." },
+  { step: "02", title: "Review", body: "Healthcare professionals view the content, confirm the clinical details and approve the patient-facing guidance." },
+  { step: "03", title: "Create", body: "Medivo AI runs the approved brief through its generation system and creates a clear patient education video." },
   { step: "04", title: "Deliver", body: "The patient receives a mobile link and can revisit the video after leaving care." },
 ];
 
@@ -198,11 +198,56 @@ export default function Home() {
 
       <section className="workflow" id="product">
         <div className="workflow-visual">
-          <div className={`spatial stage-${active}`}>
-            <div className="plane plane-one"><span>PATIENT INSTRUCTIONS</span><b>Endoscopy recovery</b><i/><i/><i/></div>
-            <div className="plane plane-two"><span>CLINICAL REVIEW</span><b>Patient information</b><p><i/>Procedure <strong>Confirmed</strong></p><p><i/>Follow-up <strong>Confirmed</strong></p></div>
-            <div className="plane plane-three"><div className="check">✓</div><b>Ready to create</b></div>
-            <div className="mini-phone"><div><Logo/><span>▶</span></div><b>Your recovery guide</b><small>Available on mobile</small></div>
+          <div className={`workflow-showcase stage-${active}`} aria-hidden="true">
+            <div className="workflow-scene scene-prepare">
+              <div className="scene-backdrop" />
+              <div className="workflow-browser">
+                <div className="browser-bar"><i /><i /><i /><span>Medivo AI</span></div>
+                <div className="browser-body">
+                  <p className="field-label">Medical field</p>
+                  <div className="select-control">Endoscopy <span>⌄</span></div>
+                  <div className="select-menu">
+                    <span>Endoscopy</span>
+                    <span>Cardiology</span>
+                    <span>Orthopaedics</span>
+                    <span>Medication review</span>
+                  </div>
+                  <div className="brief-card">
+                    <b>Patient pathway</b>
+                    <p>Preparation, recovery and follow-up instructions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="workflow-scene scene-review">
+              <div className="workflow-browser review-browser">
+                <div className="browser-bar"><i /><i /><i /><span>Clinical review</span></div>
+                <div className="browser-body">
+                  <div className="review-row"><span>Procedure</span><b>Confirmed</b></div>
+                  <div className="review-row"><span>Diet guidance</span><b>Confirmed</b></div>
+                  <div className="review-row"><span>Medication changes</span><b>Confirmed</b></div>
+                  <div className="review-note">
+                    <strong>Ready for video creation</strong>
+                    <p>Reviewed by care team before delivery.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="workflow-scene scene-create">
+              <div className="generation-panel">
+                <span>CREATE VIDEO</span>
+                <h3>Generating patient education video</h3>
+                <div className="generation-meter"><i /></div>
+                <div className="generation-steps">
+                  <p><b /> Structuring approved content</p>
+                  <p><b /> Creating visuals and narration</p>
+                  <p><b /> Preparing mobile preview</p>
+                </div>
+              </div>
+            </div>
+            <div className="workflow-scene scene-deliver">
+              <Image src="/workflow-deliver.png" alt="" fill sizes="(max-width: 900px) 82vw, 46vw" />
+            </div>
           </div>
           <div className="step-indicator">{workflow.map((_, i) => <button key={i} className={active === i ? "active" : ""} onClick={() => document.querySelector(`[data-workflow-step='${i}']`)?.scrollIntoView({behavior:"smooth"})} aria-label={`View workflow step ${i + 1}`}><i/></button>)}</div>
         </div>
