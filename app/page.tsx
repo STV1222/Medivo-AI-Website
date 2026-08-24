@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       <section className="platform">
-        <div className="section-head"><div><p className="section-eyebrow">The platform</p><h2>One platform for patient education.</h2></div><p>A structured workspace for healthcare teams to prepare, review and deliver patient-facing videos.</p></div>
+        <div className="section-head"><div><p className="section-eyebrow">The platform</p><h2>One platform for patient education.</h2></div></div>
         <div className="platform-tabs" role="tablist">{platformTabs.map((tab, i) => <button role="tab" aria-selected={platform === i} className={platform === i ? "active" : ""} onClick={() => setPlatform(i)} key={tab}><span>0{i+1}</span>{tab}</button>)}</div>
         <div className={`platform-window view-${platform}`}>
           <div className="app-nav"><span><Logo/></span><i/><i/><i/></div>

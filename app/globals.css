@@ -29,6 +29,7 @@ button{font:inherit}
 .menu-button{display:none;background:none;border:0;color:white}
 .section-label{font-size:10px;letter-spacing:.19em;font-weight:700;text-transform:uppercase}
 .section-eyebrow{font-size:10px;line-height:1;letter-spacing:.19em;font-weight:700;text-transform:uppercase;color:var(--teal);margin:0 0 30px}
+.problem h2 span,.solution h2 span,.platform h2 span,.endoscopy h2 span,.value h2 span,.workflow h2 span{color:#89949b}
 .hero{height:100svh;min-height:640px;position:relative;overflow:hidden;color:white;display:grid;place-items:center;text-align:center;background:#071b20}
 .hero-film{position:absolute;inset:-16px;background:#071b20 url('/medivo-hero-poster.webp') center/cover no-repeat;overflow:hidden}
 .hero-video{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:blur(9px) saturate(.72) brightness(.8);transform:scale(1.055);will-change:transform}
@@ -40,7 +41,6 @@ button{font:inherit}
 .problem h2,.solution h2,.platform h2,.endoscopy h2,.value h2,.workflow h2,.cta-band h2{font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight)}
 .problem-heading{padding:0 5vw;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
 .problem-heading h2{font-family:Inter,Arial,sans-serif;font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);max-width:1160px;margin:0 0 4.8vw}
-.problem-heading h2 span{color:#89949b}
 .problem-track{display:flex;gap:18px;padding:0 5vw 10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain}
 .problem-track::-webkit-scrollbar{display:none}
 .problem-card{flex:0 0 min(38vw,560px);min-height:330px;padding:30px 34px;background:var(--widget);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;scroll-snap-align:start;transition:background .25s,transform .25s}
@@ -143,12 +143,11 @@ button{font:inherit}
 .platform{padding:11vw 5vw;background:var(--warm)}
 .section-head{display:grid;grid-template-columns:2fr 1fr;align-items:end;margin-bottom:6vw}
 .section-head h2{margin:0}
-.section-head>p{font-size:var(--body-size);line-height:var(--body-line);max-width:430px;color:var(--muted)}
 .platform-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .platform-tabs button{border:0;border-right:1px solid var(--line);background:none;padding:20px;text-align:left;font-size:14px;cursor:pointer;transition:.25s}
 .platform-tabs button span{font-size:9px;color:var(--teal);margin-right:15px}
 .platform-tabs button.active{background:#d8e8e3}
-.platform-window{height:min(61vw,760px);display:grid;grid-template-columns:190px 1fr;background:var(--widget);border:1px solid var(--line);box-shadow:0 30px 90px rgba(10,39,40,.1);border-radius:var(--radius);overflow:hidden}
+.platform-window{height:min(61vw,760px);display:grid;grid-template-columns:190px 1fr;background:linear-gradient(180deg,rgba(245,238,224,.82),rgba(245,238,224,.18) 42%,rgba(98,130,142,.36) 43%,rgba(98,130,142,.18) 55%,rgba(198,176,126,.52) 56%,rgba(219,202,157,.76)),linear-gradient(135deg,#eff3ef 0%,#f4dfc9 36%,#cadad7 62%,#b9c8b8 100%);border:1px solid var(--line);box-shadow:0 30px 90px rgba(10,39,40,.1);border-radius:var(--radius);overflow:hidden}
 .app-nav{background:#0a222a;color:white;padding:28px;display:flex;flex-direction:column;gap:30px}
 .app-nav span{display:flex;align-items:center}
 .app-nav .brand-logo{width:112px}
@@ -175,7 +174,6 @@ button{font:inherit}
 .journey p{font-size:var(--body-size);line-height:var(--body-line);color:#596c70}
 .value{background:#f5f6f3;padding:10vw 5vw 6vw}
 .value>h2{max-width:1250px;margin:0 0 5.5vw}
-.value>h2 span{color:#8b959b}
 .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .comparison-card{min-height:420px;border-radius:var(--radius);padding:5vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .comparison-card h3{font-size:var(--card-title-size);line-height:1.04;letter-spacing:var(--title-track);font-weight:510;margin:0 0 8vw}
