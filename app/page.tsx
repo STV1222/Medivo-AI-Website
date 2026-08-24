@@ -200,7 +200,6 @@ export default function Home() {
         <div className="workflow-visual">
           <div className={`workflow-showcase stage-${active}`} aria-hidden="true">
             <div className="workflow-scene scene-prepare">
-              <div className="scene-backdrop" />
               <div className="workflow-browser">
                 <div className="browser-bar"><i /><i /><i /><span>Medivo AI</span></div>
                 <div className="browser-body">
@@ -234,14 +233,19 @@ export default function Home() {
               </div>
             </div>
             <div className="workflow-scene scene-create">
-              <div className="generation-panel">
-                <span>CREATE VIDEO</span>
-                <h3>Generating patient education video</h3>
-                <div className="generation-meter"><i /></div>
-                <div className="generation-steps">
-                  <p><b /> Structuring approved content</p>
-                  <p><b /> Creating visuals and narration</p>
-                  <p><b /> Preparing mobile preview</p>
+              <div className="workflow-browser create-browser">
+                <div className="browser-bar"><i /><i /><i /><span>Video creation</span></div>
+                <div className="browser-body">
+                  <div className="create-status">
+                    <span>CREATE VIDEO</span>
+                    <h3>Generating patient education video</h3>
+                    <div className="generation-meter"><i /></div>
+                    <div className="generation-steps">
+                      <p><b /> Structuring approved content</p>
+                      <p><b /> Creating visuals and narration</p>
+                      <p><b /> Preparing mobile preview</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
