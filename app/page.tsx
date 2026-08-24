@@ -89,7 +89,7 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <a className="button button-light header-cta" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo <span>↗</span></a>
+        <a className="button button-light header-cta" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book demo <span>↗</span></a>
         <button className="menu-button" onClick={() => setMenu(!menu)} aria-label="Toggle menu" aria-expanded={menu}><span/><span/></button>
       </header>
 
