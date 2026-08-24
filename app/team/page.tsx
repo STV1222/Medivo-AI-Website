@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { EditorialFooter, EditorialHeader } from "../components/EditorialChrome";
 
 export const metadata: Metadata = {
@@ -35,6 +34,18 @@ const founders = [
       "Specialist experience in embodied artificial intelligence",
     ],
   },
+  {
+    number: "03",
+    name: "Heye Fan",
+    role: "Cofounder & Technical Lead",
+    image: null,
+    alt: "Heye Fan, Cofounder and Technical Lead of Medivo AI",
+    statement: "Leading technical product development across the Medivo AI platform.",
+    details: [
+      "Graduate, University of Toronto",
+      "Technical focus and background details TBD",
+    ],
+  },
 ];
 
 export default function TeamPage() {
@@ -50,18 +61,17 @@ export default function TeamPage() {
         <p className="editorial-manifesto">A team working at the intersection of healthcare, engineering and artificial intelligence.</p>
       </section>
 
-      <section className="team-intro">
-        <p className="editorial-kicker">WHY THIS TEAM</p>
-        <h2>We combine medical-device thinking with experience building AI systems.</h2>
-        <p>Medivo AI was founded to address a practical communication problem: patients often leave care with important instructions they cannot easily remember or revisit. Our role is to turn that problem into a focused, clinician-controlled product.</p>
-        <span className="editorial-index">01</span>
-      </section>
-
       <section className="founder-list">
         {founders.map((founder) => (
           <article className="founder-profile" key={founder.name}>
             <div className="founder-image-wrap">
-              <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 900px) 100vw, 53vw" />
+              {founder.image ? (
+                <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 900px) 100vw, 53vw" />
+              ) : (
+                <div className="founder-placeholder" aria-label={founder.alt}>
+                  <b>{founder.name.split(" ").map((part) => part[0]).join("")}</b>
+                </div>
+              )}
               <span>{founder.number}</span>
             </div>
             <div className="founder-copy">
@@ -83,9 +93,9 @@ export default function TeamPage() {
         <span className="editorial-index">04</span>
       </section>
 
-      <section className="editorial-close">
-        <p>One shared goal: make important medical information easier to understand.</p>
-        <Link href="/about">Why we’re here <span>→</span></Link>
+      <section className="cta-band">
+        <h2>Bring patient education video into a real care pathway.</h2>
+        <a className="button" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo">Book demo <span>↗</span></a>
       </section>
 
       <EditorialFooter />
