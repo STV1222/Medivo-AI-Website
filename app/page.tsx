@@ -84,6 +84,7 @@ export default function Home() {
           <div className="resource-menu">
             <button onClick={() => setResources(!resources)} aria-expanded={resources}>Resources <span>⌄</span></button>
             <div className={resources ? "resource-dropdown show" : "resource-dropdown"}>
+              <span className="resource-dropdown-label">Resources</span>
               <a href="/about" onClick={closeMenu}>About</a>
               <a href="/team" onClick={closeMenu}>Team</a>
             </div>
