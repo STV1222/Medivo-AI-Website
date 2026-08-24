@@ -76,8 +76,8 @@ button{font:inherit}
 .problem-image-slot span:before{content:"";position:absolute;left:0;top:-5px;width:1px;height:28px;background:#879093}
 .problem-editorial-copy h3{font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);margin:0 0 42px}
 .problem-editorial-copy>p:last-child{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);max-width:530px}
-.solution{background:#f5f6f3;color:var(--ink);padding:10vw 5vw 5vw}
-.solution-heading{display:grid;grid-template-columns:.9fr 1fr;gap:5vw;align-items:end;text-align:left;background:var(--widget);border:1px solid rgba(16,37,44,.08);border-radius:var(--radius);padding:4.5vw;margin:0 0 22px}
+.solution{background:var(--widget);color:var(--ink);padding:10vw 5vw 5vw}
+.solution-heading{display:grid;grid-template-columns:.9fr 1fr;gap:5vw;align-items:end;text-align:left;margin:0 0 5vw}
 .solution-heading .section-eyebrow{grid-column:1/-1}
 .solution-heading h2{font-family:Inter,Arial,sans-serif;font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);max-width:620px;margin:0}
 .solution-lead{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);max-width:620px;margin:0}
@@ -228,7 +228,7 @@ to{opacity:1;transform:none}
 .problem-controls{padding:28px 0 72px}
 .problem-editorial{grid-template-columns:1fr;gap:50px}
 .problem-editorial-copy{max-width:680px}
-.solution-heading{grid-template-columns:1fr;padding:54px 7vw;gap:28px}
+.solution-heading{grid-template-columns:1fr;gap:28px;margin:0 0 54px}
 .solution-heading h2{font-size:var(--title-size)}
 .solution-outcome{height:780px;min-height:0}
 .solution-message{left:7vw;top:70px;transform:none;width:75%}
@@ -304,7 +304,7 @@ to{opacity:1;transform:none}
 .comparison-medivo ul{margin-top:64px}
 .footer-main nav{grid-template-columns:1fr}
 .solution{padding-left:0;padding-right:0}
-.solution-heading{margin:0 5vw 22px;padding:34px 6vw;border-radius:14px}
+.solution-heading{margin:0 5vw 40px}
 .solution-outcome{height:800px;border-radius:0;border-left:0;border-right:0}
 .solution-message{left:5vw;right:5vw;top:70px;width:auto}
 .solution-message>p{font-size:var(--title-size)}
