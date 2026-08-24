@@ -370,14 +370,12 @@ to{opacity:1;transform:none}
 .editorial-copy-stack .editorial-lead{font-size:clamp(27px,3.1vw,48px);line-height:1.18;letter-spacing:-.035em;color:#101b20;margin:0 0 48px}
 .editorial-text-link{margin-top:64px;display:flex;justify-content:space-between;align-items:center;max-width:420px;padding:17px 0;border-bottom:1px solid #101b20;font-size:15px}
 .editorial-text-link b{font-size:22px;font-weight:400}
-.about-belief{padding:10vw 3.4vw 7vw;background:#dce9e4;position:relative;min-height:950px}
-.about-belief>h2{max-width:1420px}
-.about-belief-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:9vw;border-top:1px solid rgba(16,27,32,.25)}
-.about-belief-grid article{min-height:330px;padding:25px 26px 60px;border-right:1px solid rgba(16,27,32,.25)}
-.about-belief-grid article:first-child{border-left:1px solid rgba(16,27,32,.25)}
-.about-belief-grid span{font-size:10px;color:var(--teal)}
-.about-belief-grid h3{font-size:clamp(27px,2.6vw,41px);line-height:1.06;letter-spacing:-.04em;margin:86px 0 22px;font-weight:520}
-.about-belief-grid p{font-size:14px;line-height:1.65;color:#526267;max-width:390px}
+.about-belief{padding:8vw 3.4vw 7vw;background:#f6f6f2;position:relative;display:grid;grid-template-columns:270px 1fr;gap:5vw;border-top:1px solid rgba(16,27,32,.16)}
+.about-belief .editorial-kicker{font-size:17px;letter-spacing:-.02em;text-transform:none;color:#101b20}
+.about-belief-list{border-top:1px solid rgba(16,27,32,.18)}
+.about-belief-list article{display:grid;grid-template-columns:minmax(280px,1fr) minmax(260px,430px);gap:5vw;align-items:start;padding:37px 0 54px;border-bottom:1px solid rgba(16,27,32,.16)}
+.about-belief-list h3{font-size:clamp(29px,2.5vw,42px);line-height:1.05;letter-spacing:-.045em;font-weight:480;margin:0}
+.about-belief-list p{font-size:16px;line-height:1.35;font-weight:560;text-align:right;color:#536166;margin:0}
 .about-stage{background:#f0f0eb}
 .editorial-close{background:var(--teal);color:#fff;padding:7vw 3.4vw;display:grid;grid-template-columns:1fr auto;gap:6vw;align-items:end}
 .editorial-close p{font-size:clamp(43px,6.6vw,102px);line-height:.93;letter-spacing:-.06em;max-width:1200px;margin:0}
@@ -434,10 +432,9 @@ to{opacity:1;transform:none}
 .editorial-split h2,.about-belief>h2,.team-intro h2,.team-principle h2{font-size:clamp(47px,13vw,76px)}
 .editorial-copy-stack{padding:0}
 .editorial-copy-stack .editorial-lead{font-size:28px}
-.about-belief{padding:100px 5vw 90px;min-height:unset}
-.about-belief-grid{grid-template-columns:1fr;margin-top:80px}
-.about-belief-grid article{min-height:240px;border-left:1px solid rgba(16,27,32,.25)}
-.about-belief-grid h3{margin-top:48px}
+.about-belief{padding:90px 5vw;grid-template-columns:1fr;gap:42px}
+.about-belief-list article{grid-template-columns:1fr;gap:20px;padding:34px 0}
+.about-belief-list p{text-align:left;font-size:15px;max-width:520px}
 .editorial-index{left:5vw}
 .editorial-close{padding:90px 5vw;grid-template-columns:1fr;gap:50px}
 .editorial-close p{font-size:50px}
@@ -460,10 +457,8 @@ to{opacity:1;transform:none}
 .editorial-hero h1{font-size:70px}
 .about-film{height:68vh}
 .about-film video{filter:blur(4px) saturate(.7)}
-.about-belief-grid article{padding-left:19px;padding-right:19px}
 .founder-image-wrap{min-height:68vh}
 .founder-copy h2{font-size:54px}
-.editorial-close p{font-size:43px}
 }
 
 @media(prefers-reduced-motion:reduce){

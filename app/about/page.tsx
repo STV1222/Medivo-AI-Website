@@ -44,30 +44,17 @@ export default function AboutPage() {
 
       <section className="about-belief">
         <p className="editorial-kicker">OUR BELIEF</p>
-        <h2>Technology should support the conversations that matter—not replace them.</h2>
-        <div className="about-belief-grid">
-          <article><span>01</span><h3>Clinician controlled</h3><p>Healthcare professionals check and confirm the relevant information before patient delivery.</p></article>
-          <article><span>02</span><h3>Built for understanding</h3><p>Voice, visuals and clear language help make complex instructions easier to revisit.</p></article>
-          <article><span>03</span><h3>Designed for care beyond the visit</h3><p>Patients and families can return to their guidance after leaving the hospital.</p></article>
+        <div className="about-belief-list">
+          <article><h3>Clinician controlled</h3><p>Healthcare professionals check and confirm the relevant information before patient delivery.</p></article>
+          <article><h3>Built for understanding</h3><p>Voice, visuals and clear language help make complex instructions easier to revisit.</p></article>
+          <article><h3>Available beyond the visit</h3><p>Patients and families can return to their guidance after leaving the hospital.</p></article>
         </div>
         <span className="editorial-index">03</span>
       </section>
 
-      <section className="editorial-split about-stage">
-        <div>
-          <p className="editorial-kicker">WHERE WE ARE</p>
-          <h2>Starting focused. Learning with clinical teams.</h2>
-        </div>
-        <div className="editorial-copy-stack">
-          <p className="editorial-lead">Medivo AI is currently developing its product prototype with healthcare teams.</p>
-          <p>We are beginning with defined patient education workflows, including endoscopy, to understand clinical fit, healthcare-professional review, and the patient experience before expanding further.</p>
-        </div>
-        <span className="editorial-index">04</span>
-      </section>
-
-      <section className="editorial-close">
-        <p>Let every medical explanation be truly understood.</p>
-        <Link href="/team">Meet the team <span>→</span></Link>
+      <section className="cta-band">
+        <h2>Bring patient education video into a real care pathway.</h2>
+        <a className="button" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo">Book demo <span>↗</span></a>
       </section>
 
       <EditorialFooter />
