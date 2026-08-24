@@ -132,7 +132,7 @@ button{font:inherit}
 .generation-steps p{display:flex;align-items:center;gap:10px;margin:0;font-size:14px;color:var(--muted)}
 .generation-steps b{width:8px;height:8px;border-radius:50%;background:#89d7d3}
 .scene-deliver{inset:26px}
-.scene-deliver img{object-fit:contain;object-position:center;filter:drop-shadow(0 30px 55px rgba(16,37,44,.22));transform:scale(.72)}
+.scene-deliver img{inset:auto!important;left:50%!important;top:50%!important;width:auto!important;height:min(84%,520px)!important;max-width:82%!important;object-fit:contain;object-position:center;filter:drop-shadow(0 30px 55px rgba(16,37,44,.22));transform:translate(-50%,-50%)}
 .step-indicator{position:absolute;right:28px;display:flex;flex-direction:column;gap:11px}
 .step-indicator button{border:0;background:transparent;padding:4px;cursor:pointer}
 .step-indicator i{display:block;width:2px;height:24px;background:rgba(16,37,44,.22);transition:.3s}
