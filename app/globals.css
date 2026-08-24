@@ -28,6 +28,7 @@ button{font:inherit}
 .header-cta{justify-self:end}
 .menu-button{display:none;background:none;border:0;color:white}
 .section-label{font-size:10px;letter-spacing:.19em;font-weight:700;text-transform:uppercase}
+.section-eyebrow{font-size:10px;line-height:1;letter-spacing:.19em;font-weight:700;text-transform:uppercase;color:var(--teal);margin:0 0 30px}
 .hero{height:100svh;min-height:640px;position:relative;overflow:hidden;color:white;display:grid;place-items:center;text-align:center;background:#071b20}
 .hero-film{position:absolute;inset:-16px;background:#071b20 url('/medivo-hero-poster.webp') center/cover no-repeat;overflow:hidden}
 .hero-video{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:blur(9px) saturate(.72) brightness(.8);transform:scale(1.055);will-change:transform}

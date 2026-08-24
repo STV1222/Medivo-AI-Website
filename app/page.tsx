@@ -113,6 +113,7 @@ export default function Home() {
 
       <section className="problem" id="problem">
         <div className="problem-heading">
+          <p className="section-eyebrow">The problem</p>
           <h2>Patients receive important instructions in minutes.<br/><span>They are expected to remember them for days.</span></h2>
         </div>
 
@@ -147,6 +148,7 @@ export default function Home() {
 
       <section className="solution" id="solution">
         <div className="solution-heading">
+          <p className="section-eyebrow">Our solution</p>
           <h2>Guidance that stays with the patient.</h2>
           <p className="solution-lead">Medivo AI turns confirmed medical instructions into a clear, personalised video patients can watch—and revisit—from their phone.</p>
         </div>
@@ -238,13 +240,13 @@ export default function Home() {
           <div className="step-indicator">{workflow.map((_, i) => <button key={i} className={active === i ? "active" : ""} onClick={() => document.querySelector(`[data-workflow-step='${i}']`)?.scrollIntoView({behavior:"smooth"})} aria-label={`View workflow step ${i + 1}`}><i/></button>)}</div>
         </div>
         <div className="workflow-copy">
-          <div className="workflow-intro"><h2>From clinical instruction to patient understanding.</h2></div>
+          <div className="workflow-intro"><p className="section-eyebrow">Product workflow</p><h2>From clinical instruction to patient understanding.</h2></div>
           {workflow.map((item, i) => <article key={item.step} data-workflow-step={i}><p className="section-label">{item.step}</p><h3>{item.title}</h3><p>{item.body}</p></article>)}
         </div>
       </section>
 
       <section className="platform">
-        <div className="section-head"><div><h2>One platform for patient education.</h2></div><p>A structured workspace for healthcare teams to prepare, review and deliver patient-facing videos.</p></div>
+        <div className="section-head"><div><p className="section-eyebrow">The platform</p><h2>One platform for patient education.</h2></div><p>A structured workspace for healthcare teams to prepare, review and deliver patient-facing videos.</p></div>
         <div className="platform-tabs" role="tablist">{platformTabs.map((tab, i) => <button role="tab" aria-selected={platform === i} className={platform === i ? "active" : ""} onClick={() => setPlatform(i)} key={tab}><span>0{i+1}</span>{tab}</button>)}</div>
         <div className={`platform-window view-${platform}`}>
           <div className="app-nav"><span><Logo/></span><i/><i/><i/></div>
@@ -259,6 +261,7 @@ export default function Home() {
       </section>
 
       <section className="endoscopy">
+        <p className="section-eyebrow">Patient journey</p>
         <h2>Support patients before and after their procedure.</h2>
         <div className="journey">
           <article><span>01</span><h3>Before</h3><p>Preparation requirements, timing and what to expect.</p></article>
@@ -269,6 +272,7 @@ export default function Home() {
       </section>
 
       <section className="value">
+        <p className="section-eyebrow">Why Medivo AI</p>
         <h2>Extend patient communication beyond the hospital visit.<br/><span>Not just another instruction sheet.</span></h2>
         <div className="comparison-grid">
           <article className="comparison-card comparison-traditional">
