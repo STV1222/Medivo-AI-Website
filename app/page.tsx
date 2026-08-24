@@ -181,7 +181,9 @@ export default function Home() {
       </section>
 
       <section className="workflow" id="product">
-        <div className="workflow-visual">
+        <div className="workflow-intro"><p className="section-eyebrow">Product workflow</p><h2>From clinical instruction to patient understanding.</h2></div>
+        <div className="workflow-body">
+          <div className="workflow-visual">
           <div className={`workflow-showcase stage-${active}`} aria-hidden="true">
             <div className="workflow-scene scene-prepare">
               <div className="workflow-browser">
@@ -238,10 +240,10 @@ export default function Home() {
             </div>
           </div>
           <div className="step-indicator">{workflow.map((_, i) => <button key={i} className={active === i ? "active" : ""} onClick={() => document.querySelector(`[data-workflow-step='${i}']`)?.scrollIntoView({behavior:"smooth"})} aria-label={`View workflow step ${i + 1}`}><i/></button>)}</div>
-        </div>
-        <div className="workflow-copy">
-          <div className="workflow-intro"><p className="section-eyebrow">Product workflow</p><h2>From clinical instruction to patient understanding.</h2></div>
-          {workflow.map((item, i) => <article key={item.step} data-workflow-step={i}><p className="section-label">{item.step}</p><h3>{item.title}</h3><p>{item.body}</p></article>)}
+          </div>
+          <div className="workflow-copy">
+            {workflow.map((item, i) => <article key={item.step} data-workflow-step={i}><p className="section-label">{item.step}</p><h3>{item.title}</h3><p>{item.body}</p></article>)}
+          </div>
         </div>
       </section>
 
