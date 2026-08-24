@@ -12,24 +12,6 @@ const workflow = [
 
 const platformTabs = ["Prepare", "Review", "Preview", "Deliver"];
 
-const assurancePoints = [
-  {
-    number: "01",
-    title: "Clinician-reviewed before delivery",
-    body: "The workflow keeps healthcare professionals in control of the instructions, patient details and final education experience.",
-  },
-  {
-    number: "02",
-    title: "Built around approved content",
-    body: "Medivo AI is designed to work from an organisation's established information, so videos stay aligned with local guidance.",
-  },
-  {
-    number: "03",
-    title: "Clear for patients and families",
-    body: "Patients receive guidance in plain language, with a visual format they can revisit after the appointment.",
-  },
-];
-
 const problemCards = [
   {
     step: "01",
@@ -272,25 +254,6 @@ export default function Home() {
               <div className="app-list"><i/><i/><i/><i/><i/></div>
               <div className="app-preview"><div className="preview-media"><span>{platform === 2 || platform === 3 ? "▶" : "✓"}</span></div><b>{platform === 0 ? "Patient instructions" : platform === 1 ? "Clinical confirmation" : platform === 2 ? "Video preview" : "Delivery status"}</b><p>{platform === 3 ? "Ready for patient access" : "Endoscopy patient education"}</p></div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="assurance" aria-label="Medivo AI governance and delivery principles">
-        <div className="assurance-panel">
-          <div className="assurance-copy">
-            <p className="section-label">CLINICAL WORKFLOW</p>
-            <h2>Designed for healthcare teams that need control, not guesswork.</h2>
-            <p>Medivo AI positions artificial intelligence inside a reviewed workflow, helping teams scale patient education while keeping the source information, tone and delivery accountable.</p>
-          </div>
-          <div className="assurance-grid">
-            {assurancePoints.map((item) => (
-              <article key={item.number}>
-                <span>{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

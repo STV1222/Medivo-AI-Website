@@ -162,16 +162,6 @@ button{font:inherit}
 .preview-media span{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:white;color:var(--teal)}
 .app-preview>b{display:block;font-size:22px;margin:25px 0 8px}
 .app-preview p{color:#758286}
-.assurance{background:var(--warm);color:var(--ink);padding:5vw}
-.assurance-panel{min-height:820px;display:grid;grid-template-columns:.92fr 1.08fr;background:var(--widget);border:1px solid rgba(16,37,44,.08);border-radius:var(--radius);position:relative;overflow:hidden;isolation:isolate}
-.assurance-copy{padding:6vw 5vw;display:flex;flex-direction:column;justify-content:space-between;min-height:820px}
-.assurance-copy h2{font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);margin:42px 0 0;max-width:790px}
-.assurance-copy>p:last-child{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);max-width:610px;margin:80px 0 0}
-.assurance-grid{display:grid;grid-template-columns:1fr;align-content:end;border-left:1px solid rgba(16,37,44,.14)}
-.assurance-grid article{min-height:230px;padding:34px 4vw;border-top:1px solid rgba(16,37,44,.14);background:rgba(255,255,255,.28)}
-.assurance-grid span{font-size:10px;letter-spacing:.16em;color:var(--teal)}
-.assurance-grid h3{font-size:var(--card-title-size);line-height:1.04;letter-spacing:var(--title-track);font-weight:510;margin:50px 0 18px}
-.assurance-grid p{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);max-width:560px;margin:0}
 .endoscopy{background:#dbe8e3;padding:11vw 5vw}
 .endoscopy h2{max-width:1200px;margin:0 0 8vw}
 .journey{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
@@ -212,7 +202,7 @@ to{opacity:1;transform:none}
 .hero h1{font-size:var(--title-size);padding:0 5vw}
 .hero-video{filter:blur(8px) saturate(.7) brightness(.76);transform:scale(1.08)}
 .scroll-note{right:5vw}
-.solution,.platform,.assurance,.endoscopy,.value,.cta-band{padding:100px 5vw}
+.solution,.platform,.endoscopy,.value,.cta-band{padding:100px 5vw}
 .problem{padding:100px 0 90px}
 .problem h2,.solution h2,.platform h2,.endoscopy h2,.value h2,.workflow h2,.cta-band h2{font-size:var(--title-size)}
 .problem-heading h2{font-size:var(--title-size);margin-bottom:50px}
@@ -250,13 +240,6 @@ to{opacity:1;transform:none}
 .app-content{grid-template-columns:1fr}
 .app-list{display:none}
 .app-preview{min-height:480px}
-.assurance-panel{min-height:unset;grid-template-columns:1fr}
-.assurance-copy{min-height:620px;padding:70px 7vw}
-.assurance-copy h2{font-size:var(--title-size)}
-.assurance-copy>p:last-child{margin-top:70px}
-.assurance-grid{border-left:0}
-.assurance-grid article{padding:32px 7vw;min-height:230px}
-.assurance-grid h3{margin-top:44px}
 .journey{grid-template-columns:1fr 1fr}
 .journey article{min-height:270px}
 .value-list article{grid-template-columns:40px 1fr}
@@ -291,10 +274,6 @@ to{opacity:1;transform:none}
 .workflow-copy article{min-height:72vh;padding-top:28vh}
 .platform-window{height:540px}
 .app-preview{min-height:400px}
-.assurance{padding-left:0;padding-right:0}
-.assurance-panel{min-height:unset}
-.assurance-copy{min-height:590px;padding:72px 5vw}
-.assurance-grid article{padding:30px 5vw}
 .journey{grid-template-columns:1fr}
 .journey article{min-height:220px}
 .journey h3{margin-top:45px}
