@@ -295,15 +295,11 @@ export default function Home() {
             </ul>
           </article>
         </div>
-        <p className="value-close">Designed to support healthcare teams while preserving the conversations that matter.</p>
       </section>
 
       <section className="cta-band">
-        <div>
-          <p className="section-label">WORK WITH MEDIVO AI</p>
-          <h2>Bring patient education video into a real care pathway.</h2>
-        </div>
-        <a className="button button-light" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo">Book demo <span>↗</span></a>
+        <h2>Bring patient education video into a real care pathway.</h2>
+        <a className="button" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo">Book demo <span>↗</span></a>
       </section>
 
       <footer>

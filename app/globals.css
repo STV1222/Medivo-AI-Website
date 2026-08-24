@@ -194,10 +194,9 @@ button{font:inherit}
 .comparison-medivo ul{margin-top:6vw}
 .comparison-medivo li{color:rgba(255,255,255,.86)}
 .comparison-medivo li:before{background:#89d7d3;opacity:1}
-.value-close{font-family:inherit;font-size:var(--title-size);font-weight:var(--title-weight);line-height:var(--title-line);letter-spacing:var(--title-track);max-width:900px;margin:9vw 0 3vw auto;text-align:right}
-.cta-band{background:var(--teal);color:white;padding:7vw 5vw;display:grid;grid-template-columns:1fr auto;gap:6vw;align-items:end}
-.cta-band h2{font-size:var(--title-size);line-height:var(--title-line);letter-spacing:var(--title-track);font-weight:var(--title-weight);max-width:1180px;margin:38px 0 0}
-.cta-band .button{align-self:end;min-width:190px}
+.cta-band{background:#f5f6f3;color:var(--ink);padding:9vw 5vw 10vw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:34px}
+.cta-band h2{font-size:clamp(48px,7vw,116px);line-height:.92;letter-spacing:-.065em;font-weight:480;max-width:1180px;margin:0}
+.cta-band .button{min-width:0;border-radius:999px;background:#1f211c;color:#fff;padding:15px 27px;justify-content:center;gap:12px;font-size:15px;font-weight:500}
 .footer-main{background:#06151b;color:white;padding:7vw 5vw;display:grid;grid-template-columns:1fr 2fr}
 .footer-main nav{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;font-size:14px}
 .footer-main nav>div{display:flex;flex-direction:column;gap:13px}
@@ -265,7 +264,7 @@ to{opacity:1;transform:none}
 .comparison-card h3{margin-bottom:52px}
 .comparison-brand{top:46px;left:7vw;right:7vw}
 .comparison-medivo ul{margin-top:74px}
-.cta-band{grid-template-columns:1fr;gap:45px}
+.cta-band{gap:30px}
 .cta-band h2{font-size:var(--title-size)}
 .footer-main{grid-template-columns:1fr;gap:60px}
 .footer-main nav{grid-template-columns:1fr 1fr}
