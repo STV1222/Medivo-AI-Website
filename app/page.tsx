@@ -147,37 +147,35 @@ export default function Home() {
       </section>
 
       <section className="solution" id="solution">
+        <div className="solution-heading">
+          <p className="section-eyebrow">Our solution</p>
+          <h2>Guidance that stays with the patient.</h2>
+          <p className="solution-lead">Medivo AI turns confirmed medical instructions into a clear, personalised video patients can watch—and revisit—from their phone.</p>
+        </div>
+
         <div className="solution-outcome" aria-label="A Medivo AI endoscopy recovery guide delivered to a patient’s phone">
-          <div className="solution-heading">
-            <p className="section-eyebrow">Our solution</p>
-            <h2>Guidance that stays with the patient.</h2>
-            <p className="solution-lead">Medivo AI turns confirmed medical instructions into a clear, personalised video patients can watch—and revisit—from their phone.</p>
+          <div className="solution-message">
+            <p>From a stressful conversation to a calm, visual guide.</p>
+            <div className="solution-proof">
+              <span>CLINICIAN-REVIEWED</span>
+              <span>AVAILABLE AT HOME</span>
+            </div>
           </div>
 
-          <div className="solution-demo">
-            <div className="solution-message">
-              <p>From a stressful conversation to a calm, visual guide.</p>
-              <div className="solution-proof">
-                <span>CLINICIAN-REVIEWED</span>
-                <span>AVAILABLE AT HOME</span>
-              </div>
-            </div>
-
-            <div className="patient-phone">
-              <video
-                className="patient-phone-demo"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/medivo-phone-demo-poster.png"
-                aria-label="A patient education video playing on a phone"
-              >
-                <source src="/medivo-phone-demo.mp4" type="video/mp4" />
-                <source src="/medivo-phone-demo.webm" type="video/webm" />
-              </video>
-            </div>
+          <div className="patient-phone">
+            <video
+              className="patient-phone-demo"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/medivo-phone-demo-poster.png"
+              aria-label="A patient education video playing on a phone"
+            >
+              <source src="/medivo-phone-demo.mp4" type="video/mp4" />
+              <source src="/medivo-phone-demo.webm" type="video/webm" />
+            </video>
           </div>
         </div>
       </section>
