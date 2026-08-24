@@ -269,14 +269,29 @@ export default function Home() {
       </section>
 
       <section className="value">
-        <h2>Extend patient communication beyond the hospital visit.</h2>
-        <div className="value-list">
-          <article><span>01</span><h3>Consistent communication</h3><p>Deliver education aligned with the organisation’s established information and workflow.</p></article>
-          <article><span>02</span><h3>Less repetitive explanation</h3><p>Make common instructions available in a format patients can revisit.</p></article>
-          <article><span>03</span><h3>Continuity after care</h3><p>Give patients and families access to guidance after leaving the hospital.</p></article>
-          <article><span>04</span><h3>Scalable education</h3><p>Begin with endoscopy and extend across procedures, departments and languages.</p></article>
+        <h2>Extend patient communication beyond the hospital visit.<br/><span>Not just another instruction sheet.</span></h2>
+        <div className="comparison-grid">
+          <article className="comparison-card comparison-traditional">
+            <h3>Traditional communication</h3>
+            <ul>
+              <li>Explain instructions once during a busy appointment</li>
+              <li>Send patients home with paper leaflets or static PDFs</li>
+              <li>Repeat the same guidance across phone calls and visits</li>
+              <li>Leave families to interpret details after care</li>
+            </ul>
+          </article>
+          <article className="comparison-card comparison-medivo">
+            <div className="comparison-brand"><Logo/><span>AI</span></div>
+            <ul>
+              <li>Turn approved instructions into clear personalised video</li>
+              <li>Give patients a mobile guide they can revisit at home</li>
+              <li>Keep education aligned with the care team’s review</li>
+              <li>Scale consistent guidance across pathways and languages</li>
+              <li>Support understanding before questions become confusion</li>
+            </ul>
+          </article>
         </div>
-        <p className="value-close">Designed to support healthcare teams—not replace the conversations that matter.</p>
+        <p className="value-close">Designed to support healthcare teams while preserving the conversations that matter.</p>
       </section>
 
       <section className="cta-band">
