@@ -172,12 +172,11 @@ button{font:inherit}
 .advantages{background:#f5f6f3;padding:11vw 5vw}
 .advantages .section-head{margin-bottom:5vw}
 .advantage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.advantage-card{min-height:390px;padding:28px;background:var(--widget);border:1px solid rgba(16,37,44,.08);border-radius:var(--radius);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
-.advantage-card:before{content:"";position:absolute;inset:auto -40% -54% -40%;height:56%;background:radial-gradient(circle,rgba(0,123,128,.16),transparent 66%);opacity:.8}
-.advantage-card>*{position:relative;z-index:1}
-.advantage-marker{font-size:clamp(32px,4.7vw,76px);line-height:.9;letter-spacing:-.065em;font-weight:480;color:var(--teal)}
-.advantage-card h3{font-size:var(--card-title-size);line-height:1.04;letter-spacing:var(--title-track);font-weight:500;margin:0 0 18px}
-.advantage-card p{font-size:var(--body-size);line-height:var(--body-line);color:var(--muted);margin:0}
+.advantage-card{min-height:300px;padding:32px;background:#f6f6f2;border:1px solid rgba(16,37,44,.08);border-radius:14px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;box-shadow:0 16px 48px rgba(16,37,44,.04)}
+.advantage-icon{width:42px;height:42px;object-fit:contain;opacity:.92;filter:brightness(0) saturate(100%) invert(12%) sepia(17%) saturate(849%) hue-rotate(145deg) brightness(93%) contrast(93%)}
+.advantage-marker{display:block;font-size:clamp(56px,5.6vw,90px);line-height:.86;letter-spacing:-.06em;font-weight:480;color:var(--teal)}
+.advantage-card h3{font-size:clamp(24px,2.25vw,36px);line-height:1.02;letter-spacing:var(--title-track);font-weight:520;margin:0 0 20px;max-width:320px}
+.advantage-card p{font-size:clamp(15px,1.1vw,18px);line-height:1.5;color:var(--muted);margin:0;max-width:390px}
 .hospital-benefits{background:#dbe8e3;padding:11vw 5vw}
 .hospital-benefits-copy{margin-bottom:5vw}
 .hospital-benefits h2{margin:0;max-width:980px}
@@ -308,7 +307,7 @@ to{opacity:1;transform:none}
 .app-list{display:none}
 .app-preview{min-height:480px}
 .advantage-grid{grid-template-columns:1fr 1fr}
-.advantage-card{min-height:330px}
+.advantage-card{min-height:300px}
 .hospital-benefit-slider{display:grid;grid-template-columns:1fr;height:auto;min-height:0;gap:18px;overflow:visible}
 .benefit-image-card,.benefit-image-card.active{height:520px;flex:auto;transform:none}
 .benefit-content-card{order:-1;flex:auto;padding:36px;animation:none}
@@ -353,7 +352,8 @@ to{opacity:1;transform:none}
 .platform-window{height:540px}
 .app-preview{min-height:400px}
 .advantage-grid{grid-template-columns:1fr}
-.advantage-card{min-height:300px}
+.advantage-card{min-height:280px;padding:26px}
+.advantage-icon{width:36px;height:36px}
 .benefit-image-card,.benefit-image-card.active{height:480px;border-width:6px}
 .benefit-pill{top:18px;right:16px;font-size:13px;padding:9px 14px}
 .benefit-content-card{padding:28px}
