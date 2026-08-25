@@ -54,10 +54,28 @@ const advantages = [
 ] satisfies { marker: string; titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
 
 const hospitalBenefits = [
-  { titleKey: "hospital.workload.title", bodyKey: "hospital.workload.body" },
-  { titleKey: "hospital.standard.title", bodyKey: "hospital.standard.body" },
-  { titleKey: "hospital.home.title", bodyKey: "hospital.home.body" },
-] satisfies { titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
+  {
+    labelKey: "hospital.workload.label",
+    titleKey: "hospital.workload.title",
+    bodyKey: "hospital.workload.body",
+    image: "/healthcare-workload.webp",
+    altKey: "hospital.workload.alt",
+  },
+  {
+    labelKey: "hospital.standard.label",
+    titleKey: "hospital.standard.title",
+    bodyKey: "hospital.standard.body",
+    image: "/healthcare-standard.webp",
+    altKey: "hospital.standard.alt",
+  },
+  {
+    labelKey: "hospital.home.label",
+    titleKey: "hospital.home.title",
+    bodyKey: "hospital.home.body",
+    image: "/healthcare-home.webp",
+    altKey: "hospital.home.alt",
+  },
+] satisfies { labelKey: DictionaryKey; titleKey: DictionaryKey; bodyKey: DictionaryKey; image: string; altKey: DictionaryKey }[];
 
 function Logo({ priority = false }: { priority?: boolean }) {
   return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} />;
@@ -309,11 +327,16 @@ export default function Home() {
           <p className="section-eyebrow">{t("hospital.eyebrow")}</p>
           <h2>{t("hospital.title")}<br/><span>{t("hospital.subtitle")}</span></h2>
         </div>
-        <div className="hospital-benefit-list">
+        <div className="hospital-benefit-gallery">
           {hospitalBenefits.map((item) => (
-            <article key={item.titleKey}>
-              <h3>{t(item.titleKey)}</h3>
-              <p>{t(item.bodyKey)}</p>
+            <article className="hospital-benefit-card" key={item.titleKey} tabIndex={0}>
+              <Image src={item.image} alt={t(item.altKey)} fill sizes="(max-width: 900px) 90vw, 32vw" />
+              <span className="benefit-pill">{t(item.labelKey)}</span>
+              <div className="benefit-panel">
+                <h3>{t(item.titleKey)}</h3>
+                <p>{t(item.bodyKey)}</p>
+                <a href="#product">{t("hospital.learn")} <span>→</span></a>
+              </div>
             </article>
           ))}
         </div>
