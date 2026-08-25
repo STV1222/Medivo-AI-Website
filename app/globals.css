@@ -181,16 +181,19 @@ button{font:inherit}
 .hospital-benefits{background:#dbe8e3;padding:11vw 5vw}
 .hospital-benefits-copy{margin-bottom:5vw}
 .hospital-benefits h2{margin:0;max-width:980px}
-.hospital-benefit-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;min-height:min(54vw,640px)}
-.hospital-benefit-card{position:relative;min-width:0;overflow:hidden;border-radius:var(--radius);background:#f6f6f2;border:8px solid #f6f6f2;box-shadow:0 24px 70px rgba(16,37,44,.08);isolation:isolate;outline:0;transform:translateZ(0);transition:transform .3s ease,box-shadow .3s ease}
-.hospital-benefit-card:hover,.hospital-benefit-card:focus-within{transform:translate3d(0,-3px,0);box-shadow:0 28px 75px rgba(16,37,44,.12)}
-.benefit-image{position:absolute;inset:0;background-position:center;background-size:cover;filter:saturate(.92) contrast(.98);transform:scale(1.001) translateZ(0);transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .35s ease;will-change:transform}
-.hospital-benefit-card:hover .benefit-image,.hospital-benefit-card:focus-within .benefit-image{transform:scale(1.035) translateZ(0);filter:saturate(1) contrast(1)}
-.hospital-benefit-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,37,44,.04),rgba(16,37,44,.08) 42%,rgba(16,37,44,.32));opacity:.82;transition:opacity .28s ease;z-index:1}
-.hospital-benefit-card:hover:after,.hospital-benefit-card:focus-within:after{opacity:.18}
+.hospital-benefit-gallery{display:flex;gap:14px;height:min(54vw,640px);min-height:560px;overflow:hidden;contain:layout paint}
+.hospital-benefit-card{position:relative;flex:1 1 0;min-width:0;overflow:hidden;border-radius:var(--radius);background:#f6f6f2;border:8px solid #f6f6f2;box-shadow:0 24px 70px rgba(16,37,44,.08);isolation:isolate;outline:0;transform:translateZ(0);transition:flex-grow .72s cubic-bezier(.16,1,.3,1),transform .34s ease;will-change:flex-grow,transform}
+.hospital-benefit-card:first-child{flex-grow:1.35}
+.hospital-benefit-gallery:hover .hospital-benefit-card{flex-grow:.82}
+.hospital-benefit-gallery:has(.hospital-benefit-card:focus-within) .hospital-benefit-card{flex-grow:.82}
+.hospital-benefit-card:hover,.hospital-benefit-card:focus-within{flex-grow:2.45;transform:translate3d(0,-3px,0)}
+.benefit-image{position:absolute;inset:0;background-position:center;background-size:cover;transform:scale(1.002) translateZ(0);transition:transform .85s cubic-bezier(.16,1,.3,1);will-change:transform;backface-visibility:hidden}
+.hospital-benefit-card:hover .benefit-image,.hospital-benefit-card:focus-within .benefit-image{transform:scale(1.035) translateZ(0)}
+.hospital-benefit-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,246,242,.95) 0%,rgba(246,246,242,.9) 47%,rgba(246,246,242,.28) 72%,rgba(16,37,44,.2) 100%);opacity:0;transform:translate3d(-18%,0,0);transition:opacity .34s ease,transform .62s cubic-bezier(.16,1,.3,1);z-index:1;pointer-events:none}
+.hospital-benefit-card:hover:after,.hospital-benefit-card:focus-within:after{opacity:1;transform:translate3d(0,0,0)}
 .benefit-pill{position:absolute;top:24px;right:22px;z-index:3;padding:11px 18px;border-radius:999px;background:rgba(16,37,44,.45);color:white;font-size:15px;line-height:1;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
-.benefit-panel{position:absolute;left:22px;bottom:22px;z-index:2;width:min(calc(100% - 44px),440px);padding:28px;background:rgba(246,246,242,.95);border-radius:14px;box-shadow:0 22px 60px rgba(16,37,44,.16);transform:translate3d(-112%,0,0);opacity:0;transition:opacity .28s ease,transform .46s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.hospital-benefit-card:hover .benefit-panel,.hospital-benefit-card:focus-within .benefit-panel{opacity:1;transform:translate3d(0,0,0)}
+.benefit-panel{position:absolute;left:34px;top:50%;z-index:2;width:min(78%,430px);padding:0;background:transparent;border-radius:0;box-shadow:none;transform:translate3d(-32px,-50%,0);opacity:0;transition:opacity .28s ease,transform .58s cubic-bezier(.16,1,.3,1);will-change:transform}
+.hospital-benefit-card:hover .benefit-panel,.hospital-benefit-card:focus-within .benefit-panel{opacity:1;transform:translate3d(0,-50%,0)}
 .benefit-panel h3{font-size:clamp(28px,3.2vw,46px);line-height:1.02;letter-spacing:var(--title-track);font-weight:480;margin:0 0 26px}
 .benefit-panel p{font-size:17px;line-height:1.55;color:#66757b;margin:0 0 42px}
 .benefit-panel a{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-width:128px;padding:14px 21px;border-radius:999px;background:#132733;color:#fff;font-size:15px;font-weight:560}
@@ -308,7 +311,7 @@ to{opacity:1;transform:none}
 .app-preview{min-height:480px}
 .advantage-grid{grid-template-columns:1fr 1fr}
 .advantage-card{min-height:330px}
-.hospital-benefit-gallery{display:grid;grid-template-columns:1fr;min-height:0;gap:18px}
+.hospital-benefit-gallery{display:grid;grid-template-columns:1fr;height:auto;min-height:0;gap:18px}
 .hospital-benefit-card,.hospital-benefit-card:first-child{height:520px;flex:auto}
 .hospital-benefit-card:after{opacity:1;transform:none;background:linear-gradient(180deg,rgba(16,37,44,.03),rgba(16,37,44,.1) 35%,rgba(246,246,242,.95) 100%)}
 .benefit-panel{left:28px;right:28px;top:auto;bottom:28px;width:auto;opacity:1;transform:none}
