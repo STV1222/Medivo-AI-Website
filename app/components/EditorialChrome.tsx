@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FooterLanguage } from "./FooterLanguage";
 
 function Logo() {
   return (
@@ -74,6 +75,7 @@ export function EditorialFooter() {
       </div>
       <div className="footer-bottom">
         <small>© 2026 Medivo AI. All rights reserved.</small>
+        <FooterLanguage />
       </div>
     </footer>
   );

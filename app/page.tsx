@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { FooterLanguage } from "./components/FooterLanguage";
 
 const workflow = [
   { step: "01", title: "Prepare", body: "Select the medical field and care pathway, then add the relevant instructions for the patient’s procedure and recovery." },
@@ -307,7 +308,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-main"><a className="brand" href="#top" aria-label="Medivo AI home"><Logo/></a><nav><a href="#product">Product</a><a href="#solution">Solution</a><div><span>Resources</span><a href="/about">About</a><a href="/team">Team</a></div><a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a></nav></div>
-        <div className="footer-bottom"><small>© 2026 Medivo AI. All rights reserved.</small></div>
+        <div className="footer-bottom"><small>© 2026 Medivo AI. All rights reserved.</small><FooterLanguage /></div>
       </footer>
     </main>
   );
