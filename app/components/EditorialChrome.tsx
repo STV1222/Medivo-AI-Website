@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FooterLanguage } from "./FooterLanguage";
+import { Trans, useT } from "./I18n";
 
 function Logo() {
   return (
@@ -20,6 +21,7 @@ function Logo() {
 export function EditorialHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const t = useT();
 
   const closeMenus = () => {
     setMenuOpen(false);
@@ -32,21 +34,21 @@ export function EditorialHeader() {
         <Logo />
       </Link>
       <nav className={menuOpen ? "editorial-nav open" : "editorial-nav"} aria-label="Primary navigation">
-        <Link href="/#product" onClick={closeMenus}>Product</Link>
-        <Link href="/#solution" onClick={closeMenus}>Solution</Link>
+        <Link href="/#product" onClick={closeMenus}>{t("nav.product")}</Link>
+        <Link href="/#solution" onClick={closeMenus}>{t("nav.solution")}</Link>
         <div className="editorial-resource-menu">
           <button onClick={() => setResourcesOpen(!resourcesOpen)} aria-expanded={resourcesOpen}>
-            Resources <span>⌄</span>
+            {t("nav.resources")} <span>⌄</span>
           </button>
           <div className={resourcesOpen ? "editorial-resource-dropdown show" : "editorial-resource-dropdown"}>
-            <span className="resource-dropdown-label">Resources</span>
-            <Link href="/about" onClick={closeMenus}>About</Link>
-            <Link href="/team" onClick={closeMenus}>Team</Link>
+            <span className="resource-dropdown-label">{t("nav.resources")}</span>
+            <Link href="/about" onClick={closeMenus}>{t("nav.about")}</Link>
+            <Link href="/team" onClick={closeMenus}>{t("nav.team")}</Link>
           </div>
         </div>
       </nav>
       <a className="editorial-demo" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">
-        Book Demo <span>↗</span>
+        {t("nav.bookDemo")} <span>↗</span>
       </a>
       <button
         className="editorial-menu-button"
@@ -62,19 +64,21 @@ export function EditorialHeader() {
 }
 
 export function EditorialFooter() {
+  const t = useT();
+
   return (
     <footer>
       <div className="footer-main">
         <Link className="brand" href="/" aria-label="Medivo AI home"><Logo /></Link>
         <nav>
-          <Link href="/#product">Product</Link>
-          <Link href="/#solution">Solution</Link>
-          <div><span>Resources</span><Link href="/about">About</Link><Link href="/team">Team</Link></div>
-          <a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">Book Demo ↗</a>
+          <Link href="/#product">{t("nav.product")}</Link>
+          <Link href="/#solution">{t("nav.solution")}</Link>
+          <div><span>{t("nav.resources")}</span><Link href="/about">{t("nav.about")}</Link><Link href="/team">{t("nav.team")}</Link></div>
+          <a href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Demo">{t("nav.bookDemo")} ↗</a>
         </nav>
       </div>
       <div className="footer-bottom">
-        <small>© 2026 Medivo AI. All rights reserved.</small>
+        <small><Trans k="footer.rights" /></small>
         <FooterLanguage />
       </div>
     </footer>

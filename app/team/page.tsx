@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { EditorialFooter, EditorialHeader } from "../components/EditorialChrome";
+import { Trans, type DictionaryKey } from "../components/I18n";
 
 export const metadata: Metadata = {
   title: "Team — Medivo AI",
@@ -11,42 +12,50 @@ const founders = [
   {
     number: "01",
     name: "Chang-Syu Chen",
-    role: "Founder & CEO",
+    roleKey: "team.chang.role",
     image: "/chang-syu-chen.webp",
     alt: "Chang-Syu Chen, Founder and CEO of Medivo AI",
-    statement: "Building products where healthcare needs, engineering and patient experience meet.",
-    details: [
-      "Master’s in Medical Device Design and Entrepreneurship, Imperial College London",
-      "BEng Mechatronic Engineering, University of Manchester",
-      "Experience taking AI products from research and development through launch",
+    statementKey: "team.chang.statement",
+    detailKeys: [
+      "team.chang.detail1",
+      "team.chang.detail2",
+      "team.chang.detail3",
     ],
   },
   {
     number: "02",
     name: "Jiale Li",
-    role: "Cofounder & CTO",
+    roleKey: "team.jiale.role",
     image: "/jiale-li.webp",
     alt: "Jiale Li, Cofounder and CTO of Medivo AI",
-    statement: "Turning advanced AI research into systems designed for real-world use.",
-    details: [
-      "MSc Artificial Intelligence and Robotics, University College London",
-      "BEng Electrical and Electronic Engineering, University of Manchester",
-      "Specialist experience in embodied artificial intelligence",
+    statementKey: "team.jiale.statement",
+    detailKeys: [
+      "team.jiale.detail1",
+      "team.jiale.detail2",
+      "team.jiale.detail3",
     ],
   },
   {
     number: "03",
     name: "Heye Fan",
-    role: "Cofounder & Technical Lead",
+    roleKey: "team.heye.role",
     image: null,
     alt: "Heye Fan, Cofounder and Technical Lead of Medivo AI",
-    statement: "Leading technical product development across the Medivo AI platform.",
-    details: [
-      "Graduate, University of Toronto",
-      "Technical focus and background details TBD",
+    statementKey: "team.heye.statement",
+    detailKeys: [
+      "team.heye.detail1",
+      "team.heye.detail2",
     ],
   },
-];
+] satisfies {
+  number: string;
+  name: string;
+  roleKey: DictionaryKey;
+  image: string | null;
+  alt: string;
+  statementKey: DictionaryKey;
+  detailKeys: DictionaryKey[];
+}[];
 
 export default function TeamPage() {
   return (
@@ -55,10 +64,10 @@ export default function TeamPage() {
 
       <section className="editorial-hero team-hero">
         <div>
-          <p className="editorial-kicker">THE TEAM</p>
-          <h1>Who we are</h1>
+          <p className="editorial-kicker"><Trans k="team.kicker" /></p>
+          <h1><Trans k="team.title" /></h1>
         </div>
-        <p className="editorial-manifesto">A team working at the intersection of healthcare, engineering and artificial intelligence.</p>
+        <p className="editorial-manifesto"><Trans k="team.manifesto" /></p>
       </section>
 
       <section className="founder-list">
@@ -75,11 +84,11 @@ export default function TeamPage() {
               <span>{founder.number}</span>
             </div>
             <div className="founder-copy">
-              <p className="editorial-kicker">{founder.role}</p>
+              <p className="editorial-kicker"><Trans k={founder.roleKey} /></p>
               <h2>{founder.name}</h2>
-              <p className="founder-statement">{founder.statement}</p>
+              <p className="founder-statement"><Trans k={founder.statementKey} /></p>
               <ul>
-                {founder.details.map((detail) => <li key={detail}>{detail}</li>)}
+                {founder.detailKeys.map((detailKey) => <li key={detailKey}><Trans k={detailKey} /></li>)}
               </ul>
             </div>
           </article>
@@ -87,15 +96,15 @@ export default function TeamPage() {
       </section>
 
       <section className="team-principle">
-        <p className="editorial-kicker">OUR APPROACH</p>
-        <h2>Build with clinical teams. Validate the workflow. Keep patients at the centre.</h2>
-        <p>We are developing Medivo AI through focused product work and clinical collaboration, beginning with clearly defined education scenarios rather than broad, unsupported claims.</p>
+        <p className="editorial-kicker"><Trans k="team.approach" /></p>
+        <h2><Trans k="team.principle" /></h2>
+        <p><Trans k="team.principleBody" /></p>
         <span className="editorial-index">04</span>
       </section>
 
       <section className="cta-band">
-        <h2>Bring patient education video into a real care pathway.</h2>
-        <a className="button" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo">Book demo <span>↗</span></a>
+        <h2><Trans k="cta.title" /></h2>
+        <a className="button" href="mailto:hello@medivo.ai?subject=Medivo%20AI%20Product%20Demo"><Trans k="nav.bookDemoLower" /> <span>↗</span></a>
       </section>
 
       <EditorialFooter />
