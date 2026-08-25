@@ -330,7 +330,7 @@ export default function Home() {
         <div className="hospital-benefit-gallery">
           {hospitalBenefits.map((item) => (
             <article className="hospital-benefit-card" key={item.titleKey} tabIndex={0}>
-              <Image src={item.image} alt={t(item.altKey)} fill sizes="(max-width: 900px) 90vw, 32vw" />
+              <div className="benefit-image" style={{ backgroundImage: `url(${item.image})` }} role="img" aria-label={t(item.altKey)} />
               <span className="benefit-pill">{t(item.labelKey)}</span>
               <div className="benefit-panel">
                 <h3>{t(item.titleKey)}</h3>
