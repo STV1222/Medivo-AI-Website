@@ -26,7 +26,6 @@ export default function AboutPage() {
         </video>
         <div className="about-film-shade" />
         <p>Patient understanding should not end when the conversation does.</p>
-        <span className="editorial-index">01</span>
       </section>
 
       <section className="editorial-split about-purpose">
@@ -39,7 +38,6 @@ export default function AboutPage() {
           <p>Healthcare professionals remain part of the workflow before anything is delivered. Patients receive a mobile-accessible guide they can see, hear and revisit when questions arise at home.</p>
           <Link className="editorial-text-link" href="/#product"><span>Explore the product</span><b>→</b></Link>
         </div>
-        <span className="editorial-index">02</span>
       </section>
 
       <section className="about-belief">
@@ -49,7 +47,6 @@ export default function AboutPage() {
           <article><h3>Built for understanding</h3><p>Voice, visuals and clear language help make complex instructions easier to revisit.</p></article>
           <article><h3>Available beyond the visit</h3><p>Patients and families can return to their guidance after leaving the hospital.</p></article>
         </div>
-        <span className="editorial-index">03</span>
       </section>
 
       <section className="cta-band">
