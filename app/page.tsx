@@ -16,8 +16,8 @@ const problemCards = [
   {
     step: "01",
     title: "Preparation",
-    body: "Fasting, timing and transport requirements arrive before the procedure.",
-    tags: ["Nothing after midnight", "Arrival time", "Transport home"],
+    body: "Before surgery, patients need clear guidance on fasting, medication, arrival time and what to bring.",
+    tags: ["Fasting guidance", "Medication checks", "What to bring"],
   },
   {
     step: "02",
