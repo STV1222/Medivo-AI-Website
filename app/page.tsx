@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ClipboardCheck, RefreshCcw, Route } from "lucide-react";
 import { flushSync } from "react-dom";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
@@ -53,6 +54,8 @@ const advantages = [
   { marker: "03", titleKey: "advantage.clear.title", bodyKey: "advantage.clear.body" },
   { marker: "75+", titleKey: "advantage.languages.title", bodyKey: "advantage.languages.body" },
 ] satisfies { marker: string; titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
+
+const advantageIcons = [ClipboardCheck, Route, RefreshCcw];
 
 const hospitalBenefits = [
   {
@@ -337,19 +340,22 @@ export default function Home() {
           </div>
         </div>
         <div className="advantage-grid">
-          {advantages.map((item, index) => (
-            <article className="advantage-card" key={item.titleKey}>
-              {index < 3 ? (
-                <Image className="advantage-icon" src="/medivo-favicon-v2.png" alt="" width="192" height="192" priority unoptimized />
-              ) : (
-                <span className="advantage-marker">{item.marker}</span>
-              )}
-              <div>
-                <h3>{t(item.titleKey)}</h3>
-                <p>{t(item.bodyKey)}</p>
-              </div>
-            </article>
-          ))}
+          {advantages.map((item, index) => {
+            const AdvantageIcon = advantageIcons[index];
+            return (
+              <article className="advantage-card" key={item.titleKey}>
+                {index < 3 ? (
+                  <AdvantageIcon className="advantage-icon" aria-hidden="true" strokeWidth={1.7} />
+                ) : (
+                  <span className="advantage-marker">{item.marker}</span>
+                )}
+                <div>
+                  <h3>{t(item.titleKey)}</h3>
+                  <p>{t(item.bodyKey)}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 

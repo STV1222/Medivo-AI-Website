@@ -173,7 +173,7 @@ button{font:inherit}
 .advantages .section-head{margin-bottom:5vw}
 .advantage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .advantage-card{min-height:300px;padding:32px;background:#f6f6f2;border:1px solid rgba(16,37,44,.08);border-radius:14px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;box-shadow:0 16px 48px rgba(16,37,44,.04)}
-.advantage-icon{width:42px;height:42px;object-fit:contain;opacity:.92;filter:brightness(0) saturate(100%) invert(12%) sepia(17%) saturate(849%) hue-rotate(145deg) brightness(93%) contrast(93%)}
+.advantage-icon{width:42px;height:42px;color:var(--ink);opacity:.96}
 .advantage-marker{display:block;font-size:clamp(56px,5.6vw,90px);line-height:.86;letter-spacing:-.06em;font-weight:480;color:var(--teal)}
 .advantage-card h3{font-size:clamp(24px,2.25vw,36px);line-height:1.02;letter-spacing:var(--title-track);font-weight:520;margin:0 0 20px;max-width:320px}
 .advantage-card p{font-size:clamp(15px,1.1vw,18px);line-height:1.5;color:var(--muted);margin:0;max-width:390px}
