@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "./I18n";
 
 const languages = [
@@ -9,24 +10,32 @@ const languages = [
 
 export function FooterLanguage() {
   const { language, setLanguage, t } = useLanguage();
+  const [open, setOpen] = useState(false);
   const current = languages.find((item) => item.code === language) ?? languages[0];
 
   return (
-    <details className="language-menu">
-      <summary aria-label="Select language">
+    <div className={open ? "language-menu open" : "language-menu"}>
+      <button
+        type="button"
+        className="language-trigger"
+        aria-label="Select language"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
         <span className="language-globe" aria-hidden="true" />
         <span>{t(current.labelKey)}</span>
         <span className="language-caret" aria-hidden="true">⌃</span>
-      </summary>
-      <div className="language-options" role="listbox" aria-label="Language options">
+      </button>
+      {open ? <div className="language-options" role="listbox" aria-label="Language options">
         {languages.map((item) => (
           <button
             type="button"
             className={language === item.code ? "selected" : ""}
             aria-pressed={language === item.code}
-            onClick={(event) => {
+            onClick={() => {
               setLanguage(item.code);
-              event.currentTarget.closest("details")?.removeAttribute("open");
+              setOpen(false);
             }}
             key={item.code}
           >
@@ -34,7 +43,7 @@ export function FooterLanguage() {
             {language === item.code ? <span aria-hidden="true">✓</span> : null}
           </button>
         ))}
-      </div>
-    </details>
+      </div> : null}
+    </div>
   );
 }

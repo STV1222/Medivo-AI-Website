@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 type Language = "en" | "zh-Hant";
 export type DictionaryKey = keyof typeof translations.en;
@@ -322,18 +322,33 @@ function getStoredLanguage(): Language {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => getStoredLanguage());
+  const [language, setLanguageState] = useState<Language>("en");
+  const canPersist = useRef(false);
+
+  useEffect(() => {
+    window.setTimeout(() => {
+      canPersist.current = true;
+      setLanguageState(getStoredLanguage());
+    }, 0);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language === "zh-Hant" ? "zh-Hant" : "en";
-    window.localStorage.setItem(STORAGE_KEY, language);
+    if (canPersist.current) {
+      window.localStorage.setItem(STORAGE_KEY, language);
+    }
   }, [language]);
+
+  const setLanguage = useCallback((nextLanguage: Language) => {
+    canPersist.current = true;
+    setLanguageState(nextLanguage);
+  }, []);
 
   const value = useMemo(() => ({
     language,
-    setLanguage: setLanguageState,
+    setLanguage,
     t: (key: DictionaryKey) => translations[language][key],
-  }), [language]);
+  }), [language, setLanguage]);
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
