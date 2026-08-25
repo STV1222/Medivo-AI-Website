@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { flushSync } from "react-dom";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
 
@@ -108,6 +109,31 @@ export default function Home() {
   }, []);
 
   const closeMenu = () => { setMenu(false); setResources(false); };
+  const selectBenefit = (index: number) => {
+    if (index === activeBenefit) return;
+    const previousRects = new Map(
+      Array.from(document.querySelectorAll<HTMLElement>("[data-benefit-motion]")).map((item) => [
+        item.dataset.benefitMotion,
+        item.getBoundingClientRect(),
+      ])
+    );
+
+    flushSync(() => setActiveBenefit(index));
+    window.requestAnimationFrame(() => {
+      document.querySelectorAll<HTMLElement>("[data-benefit-motion]").forEach((item) => {
+        const previous = previousRects.get(item.dataset.benefitMotion);
+        const current = item.getBoundingClientRect();
+        if (!previous) return;
+        const x = previous.left - current.left;
+        const y = previous.top - current.top;
+        if (Math.abs(x) < 1 && Math.abs(y) < 1) return;
+        item.animate(
+          [{ transform: `translate3d(${x}px, ${y}px, 0)` }, { transform: "translate3d(0, 0, 0)" }],
+          { duration: 620, easing: "cubic-bezier(.16,1,.3,1)" }
+        );
+      });
+    });
+  };
   const scrollProblems = (direction: number) => {
     const track = problemTrackRef.current;
     if (!track) return;
@@ -328,31 +354,37 @@ export default function Home() {
           <p className="section-eyebrow">{t("hospital.eyebrow")}</p>
           <h2>{t("hospital.title")}<br/><span>{t("hospital.subtitle")}</span></h2>
         </div>
-        <div className="hospital-benefit-slider">
-          {hospitalBenefits.map((item, index) => (
-            <Fragment key={item.titleKey}>
-              {activeBenefit === index && (
-                <article className="benefit-content-card" aria-live="polite">
-                  <h3>{t(item.titleKey)}</h3>
-                  <p>{t(item.bodyKey)}</p>
-                  <a href="#product">{t("hospital.learn")} <span>→</span></a>
-                </article>
-              )}
-              <button
-                type="button"
-                className={activeBenefit === index ? "benefit-image-card active" : "benefit-image-card"}
-                onPointerEnter={() => setActiveBenefit(index)}
-                onMouseEnter={() => setActiveBenefit(index)}
-                onMouseMove={() => activeBenefit !== index && setActiveBenefit(index)}
-                onFocus={() => setActiveBenefit(index)}
-                onClick={() => setActiveBenefit(index)}
-                aria-pressed={activeBenefit === index}
-              >
-                <span className="benefit-image" style={{ backgroundImage: `url(${item.image})` }} role="img" aria-label={t(item.altKey)} />
-                <span className="benefit-pill">{t(item.labelKey)}</span>
-              </button>
-            </Fragment>
-          ))}
+        <div className="hospital-benefit-shell">
+          <div className="hospital-benefit-slider">
+            {hospitalBenefits.map((item, index) => (
+              <Fragment key={item.titleKey}>
+                {activeBenefit === index && (
+                  <article className="benefit-content-card" data-benefit-motion="content" aria-live="polite">
+                    <h3>{t(item.titleKey)}</h3>
+                    <p>{t(item.bodyKey)}</p>
+                  </article>
+                )}
+                <button
+                  type="button"
+                  className={activeBenefit === index ? "benefit-image-card active" : "benefit-image-card"}
+                  onPointerEnter={() => selectBenefit(index)}
+                  onMouseEnter={() => selectBenefit(index)}
+                  onFocus={() => selectBenefit(index)}
+                  onClick={() => selectBenefit(index)}
+                  aria-pressed={activeBenefit === index}
+                  data-benefit-motion={`card-${index}`}
+                >
+                  <span
+                    className="benefit-image"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                    role="img"
+                    aria-label={t(item.altKey)}
+                  />
+                  <span className="benefit-pill">{t(item.labelKey)}</span>
+                </button>
+              </Fragment>
+            ))}
+          </div>
         </div>
       </section>
 
