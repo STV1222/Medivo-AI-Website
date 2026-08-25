@@ -75,7 +75,7 @@ export default function TeamPage() {
           <article className="founder-profile" key={founder.name}>
             <div className="founder-image-wrap">
               {founder.image ? (
-                <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 900px) 100vw, 53vw" />
+                <Image src={founder.image} alt={founder.alt} fill sizes="(max-width: 900px) 100vw, 53vw" unoptimized />
               ) : (
                 <div className="founder-placeholder" aria-label={founder.alt}>
                   <b>{founder.name.split(" ").map((part) => part[0]).join("")}</b>

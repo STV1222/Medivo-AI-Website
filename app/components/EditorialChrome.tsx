@@ -14,6 +14,7 @@ function Logo() {
       alt="Medivo AI"
       width="1006"
       height="205"
+      unoptimized
     />
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
@@ -78,13 +78,14 @@ const hospitalBenefits = [
 ] satisfies { labelKey: DictionaryKey; titleKey: DictionaryKey; bodyKey: DictionaryKey; image: string; altKey: DictionaryKey }[];
 
 function Logo({ priority = false }: { priority?: boolean }) {
-  return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} />;
+  return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} unoptimized />;
 }
 
 export default function Home() {
   const t = useT();
   const [active, setActive] = useState(0);
   const [platform, setPlatform] = useState(0);
+  const [activeBenefit, setActiveBenefit] = useState(2);
   const [menu, setMenu] = useState(false);
   const [resources, setResources] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -276,7 +277,7 @@ export default function Home() {
               </div>
             </div>
             <div className="workflow-scene scene-deliver">
-              <Image src="/workflow-deliver.png" alt="" fill sizes="(max-width: 900px) 82vw, 46vw" />
+              <Image src="/workflow-deliver.png" alt="" fill sizes="(max-width: 900px) 82vw, 46vw" unoptimized />
             </div>
           </div>
           <div className="step-indicator">{workflow.map((_, i) => <button key={i} className={active === i ? "active" : ""} onClick={() => document.querySelector(`[data-workflow-step='${i}']`)?.scrollIntoView({behavior:"smooth"})} aria-label={`View workflow step ${i + 1}`}><i/></button>)}</div>
@@ -327,17 +328,30 @@ export default function Home() {
           <p className="section-eyebrow">{t("hospital.eyebrow")}</p>
           <h2>{t("hospital.title")}<br/><span>{t("hospital.subtitle")}</span></h2>
         </div>
-        <div className="hospital-benefit-gallery">
-          {hospitalBenefits.map((item) => (
-            <article className="hospital-benefit-card" key={item.titleKey} tabIndex={0}>
-              <div className="benefit-image" style={{ backgroundImage: `url(${item.image})` }} role="img" aria-label={t(item.altKey)} />
-              <span className="benefit-pill">{t(item.labelKey)}</span>
-              <div className="benefit-panel">
-                <h3>{t(item.titleKey)}</h3>
-                <p>{t(item.bodyKey)}</p>
-                <a href="#product">{t("hospital.learn")} <span>→</span></a>
-              </div>
-            </article>
+        <div className="hospital-benefit-slider">
+          {hospitalBenefits.map((item, index) => (
+            <Fragment key={item.titleKey}>
+              {activeBenefit === index && (
+                <article className="benefit-content-card" aria-live="polite">
+                  <h3>{t(item.titleKey)}</h3>
+                  <p>{t(item.bodyKey)}</p>
+                  <a href="#product">{t("hospital.learn")} <span>→</span></a>
+                </article>
+              )}
+              <button
+                type="button"
+                className={activeBenefit === index ? "benefit-image-card active" : "benefit-image-card"}
+                onPointerEnter={() => setActiveBenefit(index)}
+                onMouseEnter={() => setActiveBenefit(index)}
+                onMouseMove={() => activeBenefit !== index && setActiveBenefit(index)}
+                onFocus={() => setActiveBenefit(index)}
+                onClick={() => setActiveBenefit(index)}
+                aria-pressed={activeBenefit === index}
+              >
+                <span className="benefit-image" style={{ backgroundImage: `url(${item.image})` }} role="img" aria-label={t(item.altKey)} />
+                <span className="benefit-pill">{t(item.labelKey)}</span>
+              </button>
+            </Fragment>
           ))}
         </div>
       </section>
