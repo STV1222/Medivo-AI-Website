@@ -41,6 +41,31 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="about-evidence">
+        <div className="about-evidence-head">
+          <p className="editorial-kicker"><Trans k="evidence.eyebrow" /></p>
+          <div>
+            <h2><Trans k="evidence.title" /></h2>
+            <p><Trans k="evidence.subtitle" /></p>
+          </div>
+        </div>
+        <div className="evidence-grid">
+          <article>
+            <strong><Trans k="evidence.stat1.value" /></strong>
+            <p><Trans k="evidence.stat1.label" /></p>
+          </article>
+          <article>
+            <strong><Trans k="evidence.stat2.value" /></strong>
+            <p><Trans k="evidence.stat2.label" /></p>
+          </article>
+          <article>
+            <strong><Trans k="evidence.stat3.value" /></strong>
+            <p><Trans k="evidence.stat3.label" /></p>
+          </article>
+        </div>
+        <p className="evidence-source-note"><Trans k="evidence.source" /></p>
+      </section>
+
       <section className="about-belief">
         <p className="editorial-kicker"><Trans k="about.belief" /></p>
         <div className="about-belief-list">

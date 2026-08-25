@@ -46,6 +46,19 @@ const problemCards = [
   },
 ] satisfies { step: string; titleKey: DictionaryKey; bodyKey: DictionaryKey; tagKeys: DictionaryKey[] }[];
 
+const advantages = [
+  { marker: "01", titleKey: "advantage.clinician.title", bodyKey: "advantage.clinician.body" },
+  { marker: "02", titleKey: "advantage.personal.title", bodyKey: "advantage.personal.body" },
+  { marker: "03", titleKey: "advantage.clear.title", bodyKey: "advantage.clear.body" },
+  { marker: "75+", titleKey: "advantage.languages.title", bodyKey: "advantage.languages.body" },
+] satisfies { marker: string; titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
+
+const hospitalBenefits = [
+  { titleKey: "hospital.workload.title", bodyKey: "hospital.workload.body" },
+  { titleKey: "hospital.standard.title", bodyKey: "hospital.standard.body" },
+  { titleKey: "hospital.home.title", bodyKey: "hospital.home.body" },
+] satisfies { titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
+
 function Logo({ priority = false }: { priority?: boolean }) {
   return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} />;
 }
@@ -268,6 +281,41 @@ export default function Home() {
               <div className="app-preview"><div className="preview-media"><span>{platform === 2 || platform === 3 ? "▶" : "✓"}</span></div><b>{platform === 0 ? t("platform.instructions") : platform === 1 ? t("platform.confirmation") : platform === 2 ? t("platform.videoPreview") : t("platform.deliveryStatus")}</b><p>{platform === 3 ? t("platform.ready") : t("platform.endoscopyEducation")}</p></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="advantages">
+        <div className="section-head">
+          <div>
+            <p className="section-eyebrow">{t("advantage.eyebrow")}</p>
+            <h2>{t("advantage.title")}<br/><span>{t("advantage.subtitle")}</span></h2>
+          </div>
+        </div>
+        <div className="advantage-grid">
+          {advantages.map((item) => (
+            <article className="advantage-card" key={item.titleKey}>
+              <span className="advantage-marker">{item.marker}</span>
+              <div>
+                <h3>{t(item.titleKey)}</h3>
+                <p>{t(item.bodyKey)}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="hospital-benefits">
+        <div className="hospital-benefits-copy">
+          <p className="section-eyebrow">{t("hospital.eyebrow")}</p>
+          <h2>{t("hospital.title")}<br/><span>{t("hospital.subtitle")}</span></h2>
+        </div>
+        <div className="hospital-benefit-list">
+          {hospitalBenefits.map((item) => (
+            <article key={item.titleKey}>
+              <h3>{t(item.titleKey)}</h3>
+              <p>{t(item.bodyKey)}</p>
+            </article>
+          ))}
         </div>
       </section>
 
