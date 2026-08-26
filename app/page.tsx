@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { CalendarClock, Check, ClipboardCheck, Languages, MessageCircle, Play, RefreshCcw, Route, Send } from "lucide-react";
+import { CalendarClock, Check, ClipboardCheck, Languages, MessageCircle, Play, RefreshCcw, Route } from "lucide-react";
 import { flushSync } from "react-dom";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
@@ -96,16 +96,17 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
   if (kind === "before") {
     return (
       <div className="journey-visual journey-visual-before" aria-hidden="true">
-        <div className="journey-floating-note">Prep guide ready</div>
-        <div className="journey-tool-panel">
-          <div className="tool-panel-top"><i/><i/><i/><span>Preparation</span></div>
-          <div className="prep-list">
-            <div><Check size={14}/><span>Fasting window</span><b>Set</b></div>
-            <div><CalendarClock size={14}/><span>Arrival time</span><b>9:30</b></div>
-            <div><ClipboardCheck size={14}/><span>What to bring</span><b>Ready</b></div>
+        <div className="journey-mini-window">
+          <div className="tool-panel-top"><i/><i/><i/><span>Patient explainer</span></div>
+          <div className="journey-explainer">
+            <span>What this means</span>
+            <strong>Before your procedure</strong>
+            <p>Simple steps for fasting, arrival and medication preparation.</p>
           </div>
+          <div className="journey-step-row"><Check size={14}/><span>Fasting explained</span></div>
+          <div className="journey-step-row"><CalendarClock size={14}/><span>Arrival timing</span></div>
         </div>
-        <div className="journey-command"><span>Ask about preparation...</span><Send size={16}/></div>
+        <div className="journey-soft-bar"><ClipboardCheck size={16}/><span>Clear guidance before care</span></div>
       </div>
     );
   }
@@ -113,15 +114,16 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
   if (kind === "hospital") {
     return (
       <div className="journey-visual journey-visual-hospital" aria-hidden="true">
-        <div className="journey-tool-panel review-fragment">
-          <div className="tool-panel-top"><i/><i/><i/><span>Review</span></div>
-          <div className="review-stack">
-            <div className="review-active"><span>Endoscopy pathway</span><b>Confirmed</b></div>
-            <div><span>Medication notes</span><Check size={15}/></div>
-            <div><span>Discharge guidance</span><Check size={15}/></div>
+        <div className="journey-mini-window">
+          <div className="tool-panel-top"><i/><i/><i/><span>Clinical review</span></div>
+          <div className="journey-review-grid">
+            <div><small>Care pathway</small><strong>Endoscopy</strong></div>
+            <div><small>Status</small><strong>Confirmed</strong></div>
           </div>
+          <div className="journey-step-row"><Check size={14}/><span>Instructions approved</span></div>
+          <div className="journey-step-row"><Check size={14}/><span>Ready for patient</span></div>
         </div>
-        <div className="approval-card"><Check size={22}/><span>Clinician approved</span></div>
+        <div className="journey-soft-bar journey-soft-bar-dark"><Check size={16}/><span>Clinician approved</span></div>
       </div>
     );
   }
@@ -130,14 +132,13 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
     return (
       <div className="journey-visual journey-visual-after" aria-hidden="true">
         <div className="video-fragment">
-          <div className="video-preview"><Play size={24} fill="currentColor"/></div>
+          <div className="video-preview"><Play size={23} fill="currentColor"/></div>
           <div className="video-meta">
-            <span>Recovery video</span>
+            <span>Visual recovery explanation</span>
             <i><b/></i>
           </div>
         </div>
-        <div className="storyboard-strip"><span/><span/><span/><span/></div>
-        <div className="language-pill"><Languages size={14}/>75+ languages</div>
+        <div className="journey-topic-grid"><span>Diet</span><span>Symptoms</span><span>Medicine</span></div>
       </div>
     );
   }
@@ -151,9 +152,11 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
           <span>Your recovery video is ready</span>
           <div><Play size={18} fill="currentColor"/></div>
         </div>
-        <div className="reply-bubble">Thanks!</div>
       </div>
-      <div className="revisit-card"><RefreshCcw size={16}/><span>Revisit anytime</span></div>
+      <div className="journey-topic-grid journey-topic-grid-home">
+        <span><RefreshCcw size={13}/>Replay</span>
+        <span><Languages size={13}/>Translate</span>
+      </div>
     </div>
   );
 }
