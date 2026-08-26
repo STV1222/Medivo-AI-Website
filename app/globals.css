@@ -198,9 +198,9 @@ button{font:inherit}
 .endoscopy{background:#f8faf5;padding:11vw 5vw}
 .endoscopy h2{max-width:1200px;margin:0 0 5.5vw}
 .journey{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.journey-card{min-height:520px;padding:22px;border-radius:18px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink);background:#fff;border:1px solid rgba(16,37,44,.08);box-shadow:0 20px 64px rgba(16,37,44,.08)}
-.journey-card h3{font-size:clamp(24px,2.05vw,32px);line-height:1.04;letter-spacing:var(--title-track);font-weight:500;margin:0 0 18px}
-.journey-card>p{font-size:14px;line-height:1.46;color:#718289;max-width:330px;margin:20px 0 0}
+.journey-card{min-height:560px;padding:22px;border-radius:18px;position:relative;overflow:hidden;display:grid;grid-template-rows:70px 312px minmax(92px,auto);align-content:start;color:var(--ink);background:#fff;border:1px solid rgba(16,37,44,.08);box-shadow:0 20px 64px rgba(16,37,44,.08)}
+.journey-card h3{font-size:clamp(24px,2.05vw,32px);line-height:1.04;letter-spacing:var(--title-track);font-weight:500;margin:0;align-self:start}
+.journey-card>p{font-size:14px;line-height:1.46;color:#718289;max-width:330px;margin:22px 0 0;align-self:start}
 .journey-visual{height:312px;position:relative;display:grid;place-items:center;padding:18px;border-radius:14px;overflow:hidden;background:#eceee8;box-shadow:inset 0 0 0 1px rgba(16,37,44,.06)}
 .journey-visual:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,123,128,.08) 1px,transparent 1px);background-size:10px 10px;opacity:.7}
 .journey-visual>*{position:relative;z-index:1}
@@ -364,7 +364,7 @@ to{opacity:1;transform:none}
 .benefit-content-card p{font-size:17px;margin-bottom:0}
 .benefit-content-card a{margin-top:28px;padding:12px 18px}
 .journey{grid-template-columns:1fr 1fr}
-.journey-card{min-height:500px}
+.journey-card{min-height:540px;grid-template-rows:64px 300px minmax(92px,auto)}
 .journey-visual{height:300px}
 .comparison-grid{grid-template-columns:1fr}
 .comparison-card{min-height:360px;padding:54px 7vw}
@@ -409,7 +409,7 @@ to{opacity:1;transform:none}
 .benefit-content-card{padding:28px}
 .benefit-content-card h3{font-size:30px}
 .journey{grid-template-columns:1fr}
-.journey-card{min-height:500px;padding:24px}
+.journey-card{min-height:520px;padding:24px;grid-template-rows:56px 300px minmax(90px,auto)}
 .journey-card h3{font-size:28px}
 .journey-card p{font-size:13px}
 .journey-visual{height:300px;margin:20px 0}
