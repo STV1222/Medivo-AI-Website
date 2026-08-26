@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ClipboardCheck, RefreshCcw, Route } from "lucide-react";
+import { CalendarClock, Check, ClipboardCheck, Languages, MessageCircle, Play, RefreshCcw, Route, Send } from "lucide-react";
 import { flushSync } from "react-dom";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
@@ -81,8 +81,81 @@ const hospitalBenefits = [
   },
 ] satisfies { labelKey: DictionaryKey; titleKey: DictionaryKey; bodyKey: DictionaryKey; image: string; altKey: DictionaryKey }[];
 
+const journeyCards = [
+  { step: "01", kind: "before", titleKey: "journey.before.title", bodyKey: "journey.before.body" },
+  { step: "02", kind: "hospital", titleKey: "journey.hospital.title", bodyKey: "journey.hospital.body" },
+  { step: "03", kind: "after", titleKey: "journey.after.title", bodyKey: "journey.after.body" },
+  { step: "04", kind: "home", titleKey: "journey.home.title", bodyKey: "journey.home.body" },
+] satisfies { step: string; kind: "before" | "hospital" | "after" | "home"; titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
+
 function Logo({ priority = false }: { priority?: boolean }) {
   return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} unoptimized />;
+}
+
+function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home" }) {
+  if (kind === "before") {
+    return (
+      <div className="journey-visual journey-visual-before" aria-hidden="true">
+        <div className="journey-floating-note">Prep guide ready</div>
+        <div className="journey-tool-panel">
+          <div className="tool-panel-top"><i/><i/><i/><span>Preparation</span></div>
+          <div className="prep-list">
+            <div><Check size={14}/><span>Fasting window</span><b>Set</b></div>
+            <div><CalendarClock size={14}/><span>Arrival time</span><b>9:30</b></div>
+            <div><ClipboardCheck size={14}/><span>What to bring</span><b>Ready</b></div>
+          </div>
+        </div>
+        <div className="journey-command"><span>Ask about preparation...</span><Send size={16}/></div>
+      </div>
+    );
+  }
+
+  if (kind === "hospital") {
+    return (
+      <div className="journey-visual journey-visual-hospital" aria-hidden="true">
+        <div className="journey-tool-panel review-fragment">
+          <div className="tool-panel-top"><i/><i/><i/><span>Review</span></div>
+          <div className="review-stack">
+            <div className="review-active"><span>Endoscopy pathway</span><b>Confirmed</b></div>
+            <div><span>Medication notes</span><Check size={15}/></div>
+            <div><span>Discharge guidance</span><Check size={15}/></div>
+          </div>
+        </div>
+        <div className="approval-card"><Check size={22}/><span>Clinician approved</span></div>
+      </div>
+    );
+  }
+
+  if (kind === "after") {
+    return (
+      <div className="journey-visual journey-visual-after" aria-hidden="true">
+        <div className="video-fragment">
+          <div className="video-preview"><Play size={24} fill="currentColor"/></div>
+          <div className="video-meta">
+            <span>Recovery video</span>
+            <i><b/></i>
+          </div>
+        </div>
+        <div className="storyboard-strip"><span/><span/><span/><span/></div>
+        <div className="language-pill"><Languages size={14}/>75+ languages</div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="journey-visual journey-visual-home" aria-hidden="true">
+      <div className="phone-fragment">
+        <div className="phone-pill"/>
+        <MessageCircle size={22}/>
+        <div className="message-card">
+          <span>Your recovery video is ready</span>
+          <div><Play size={18} fill="currentColor"/></div>
+        </div>
+        <div className="reply-bubble">Thanks!</div>
+      </div>
+      <div className="revisit-card"><RefreshCcw size={16}/><span>Revisit anytime</span></div>
+    </div>
+  );
 }
 
 export default function Home() {
@@ -402,10 +475,13 @@ export default function Home() {
         <p className="section-eyebrow">{t("journey.eyebrow")}</p>
         <h2>{t("journey.title")}</h2>
         <div className="journey">
-          <article><span>01</span><h3>{t("journey.before.title")}</h3><p>{t("journey.before.body")}</p></article>
-          <article><span>02</span><h3>{t("journey.hospital.title")}</h3><p>{t("journey.hospital.body")}</p></article>
-          <article><span>03</span><h3>{t("journey.after.title")}</h3><p>{t("journey.after.body")}</p></article>
-          <article><span>04</span><h3>{t("journey.home.title")}</h3><p>{t("journey.home.body")}</p></article>
+          {journeyCards.map((item) => (
+            <article className={`journey-card journey-card-${item.kind}`} key={item.kind}>
+              <h3>{t(item.titleKey)}</h3>
+              <JourneyVisual kind={item.kind} />
+              <p>{t(item.bodyKey)}</p>
+            </article>
+          ))}
         </div>
       </section>
 
