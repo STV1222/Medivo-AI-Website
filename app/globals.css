@@ -195,53 +195,62 @@ button{font:inherit}
 .benefit-content-card h3{font-size:clamp(30px,3.2vw,48px);line-height:1.02;letter-spacing:var(--title-track);font-weight:480;margin:0 0 28px;color:var(--ink)}
 .benefit-content-card p{font-size:clamp(17px,1.45vw,23px);line-height:1.45;color:#7c8990;margin:0;max-width:480px}
 @keyframes benefit-panel-slide{from{opacity:.65;transform:translate3d(18px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
-.endoscopy{background:#f5f6f3;padding:11vw 5vw}
+.endoscopy{background:#f8faf5;padding:11vw 5vw}
 .endoscopy h2{max-width:1200px;margin:0 0 5.5vw}
-.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.journey-card{min-height:490px;padding:28px;border-radius:14px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;color:white;isolation:isolate;box-shadow:0 22px 70px rgba(16,37,44,.1)}
-.journey-card:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px);background-size:8px 8px;opacity:.32;z-index:-1}
-.journey-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 32%,rgba(6,28,37,.14));z-index:-1}
-.journey-card-before{background:radial-gradient(circle at 15% 94%,#34d6dc 0%,rgba(52,214,220,.55) 24%,transparent 46%),linear-gradient(145deg,#17333b 0%,#0d252d 56%,#1f4f54 100%)}
-.journey-card-hospital{background:radial-gradient(circle at 84% 86%,rgba(118,158,207,.7),transparent 45%),linear-gradient(145deg,#111c34 0%,#26395e 58%,#42537f 100%)}
-.journey-card-after{background:radial-gradient(circle at 86% 22%,rgba(155,207,237,.72),transparent 44%),linear-gradient(145deg,#0d1830 0%,#253c65 52%,#356c7a 100%)}
-.journey-card-home{background:radial-gradient(circle at 74% 16%,rgba(186,222,255,.72),transparent 42%),linear-gradient(145deg,#203547 0%,#416d83 58%,#90bce0 100%)}
-.journey-card h3{font-size:clamp(26px,2.2vw,34px);line-height:1.04;letter-spacing:-.035em;font-weight:470;margin:0;position:relative;z-index:2}
-.journey-card p{font-size:14px;line-height:1.45;color:rgba(255,255,255,.78);max-width:340px;margin:0;position:relative;z-index:2}
-.journey-visual{height:292px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin:20px 0 18px;transform:translateZ(0)}
-.journey-mini-window,.video-fragment,.phone-fragment{background:rgba(255,255,255,.94);color:var(--ink);border:1px solid rgba(255,255,255,.28);box-shadow:0 22px 58px rgba(3,17,22,.3);border-radius:13px;overflow:hidden}
-.tool-panel-top{height:32px;border-bottom:1px solid rgba(16,37,44,.11);display:flex;align-items:center;gap:6px;padding:0 12px;color:#879196;font-size:11px}
-.tool-panel-top i{width:8px;height:8px;border-radius:50%;background:#c7cbc8}
-.tool-panel-top span{margin-left:auto;margin-right:auto}
-.journey-mini-window{width:82%;max-width:310px}
-.journey-explainer{padding:16px 17px 14px;border-bottom:1px solid rgba(16,37,44,.08)}
-.journey-explainer span{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
-.journey-explainer strong{display:block;font-size:16px;line-height:1.08;font-weight:620;margin-bottom:8px}
-.journey-explainer p{font-size:11px;line-height:1.42;color:#708088;margin:0}
-.journey-step-row{height:40px;margin:0 14px 10px;border-radius:9px;background:#f3f7f5;border:1px solid rgba(16,37,44,.08);display:flex;align-items:center;gap:10px;padding:0 12px;font-size:12px;color:#65737a}
-.journey-step-row:first-of-type{margin-top:12px}
-.journey-step-row svg{color:var(--teal);flex:0 0 auto}
-.journey-soft-bar{width:78%;max-width:290px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.18);color:rgba(255,255,255,.9);font-size:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.journey-soft-bar-dark{background:rgba(13,31,43,.62)}
-.journey-review-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 16px 10px}
-.journey-review-grid div{border:1px solid rgba(0,123,128,.18);background:#edf5f3;border-radius:10px;padding:13px 12px}
-.journey-review-grid small{display:block;font-size:10px;color:#728188;margin-bottom:7px}
-.journey-review-grid strong{font-size:13px;color:var(--ink)}
-.video-fragment{width:78%;max-width:300px}
-.video-preview{height:118px;background:linear-gradient(145deg,#e9f3ff,#adc7e8);display:grid;place-items:center;color:white}
-.video-preview svg{padding:17px;width:64px;height:64px;border-radius:50%;background:rgba(16,37,44,.45);box-shadow:0 12px 36px rgba(16,37,44,.25)}
-.video-meta{padding:14px 16px;display:grid;gap:12px}
-.video-meta span{font-size:13px;font-weight:560}
-.video-meta i{height:7px;border-radius:999px;background:#e1e8ef;overflow:hidden}
-.video-meta b{display:block;width:68%;height:100%;border-radius:inherit;background:#55c7c5}
-.journey-topic-grid{width:78%;max-width:300px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.journey-topic-grid span{min-height:34px;border-radius:9px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;gap:6px;color:rgba(255,255,255,.9);font-size:11px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
-.journey-topic-grid-home{grid-template-columns:1fr 1fr}
-.phone-fragment{width:46%;min-width:132px;max-width:172px;aspect-ratio:9/14.5;padding:16px 11px 13px;display:flex;flex-direction:column;align-items:center;gap:13px;background:#fbfcfa;border-radius:24px}
-.phone-pill{width:46px;height:13px;border-radius:999px;background:#061c25}
-.phone-fragment>svg{color:var(--teal)}
-.message-card{width:100%;border-radius:13px;overflow:hidden;background:#eef4f1;color:var(--ink);box-shadow:0 8px 24px rgba(16,37,44,.12)}
-.message-card span{display:block;padding:12px;font-size:11px;font-weight:560}
-.message-card div{height:60px;background:linear-gradient(145deg,#c3e3e0,#7fbfc1);display:grid;place-items:center;color:white}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.journey-card{min-height:520px;padding:22px;border-radius:18px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink);background:#fff;border:1px solid rgba(16,37,44,.08);box-shadow:0 20px 64px rgba(16,37,44,.08)}
+.journey-card h3{font-size:clamp(24px,2.05vw,32px);line-height:1.04;letter-spacing:var(--title-track);font-weight:500;margin:0 0 18px}
+.journey-card>p{font-size:14px;line-height:1.46;color:#718289;max-width:330px;margin:20px 0 0}
+.journey-visual{height:312px;position:relative;display:grid;place-items:center;padding:18px;border-radius:14px;overflow:hidden;background:#eceee8;box-shadow:inset 0 0 0 1px rgba(16,37,44,.06)}
+.journey-visual:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,123,128,.08) 1px,transparent 1px);background-size:10px 10px;opacity:.7}
+.journey-visual>*{position:relative;z-index:1}
+.journey-visual-before{background:linear-gradient(180deg,#f8f1df 0%,#ecefe6 52%,#dfeadf 100%)}
+.journey-visual-hospital{background:linear-gradient(180deg,#eef5f2 0%,#e7eee9 50%,#dce8df 100%)}
+.journey-visual-after{background:linear-gradient(180deg,#edf5fb 0%,#e6f0f5 48%,#dbe9ef 100%)}
+.journey-visual-home{background:linear-gradient(180deg,#f4f6ef 0%,#e6efea 54%,#d9e8e1 100%)}
+.journey-screen,.journey-video-card,.hospital-workflow{width:100%;max-width:300px;border-radius:17px;background:rgba(255,255,255,.92);border:1px solid rgba(16,37,44,.1);box-shadow:0 24px 56px rgba(16,37,44,.14);overflow:hidden}
+.journey-card-header{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid rgba(16,37,44,.08);font-size:12px;color:#7b898d}
+.journey-card-header strong{padding:6px 10px;border-radius:999px;background:#dff1ea;color:#007b80;font-size:11px;font-weight:650}
+.prep-stack{display:grid;gap:9px;padding:15px}
+.prep-stack div{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;padding:12px;border-radius:12px;background:#f7faf7;border:1px solid rgba(16,37,44,.08);font-size:12px;color:#617177}
+.prep-stack svg{color:var(--teal)}
+.prep-stack strong{font-size:11px;color:#007b80}
+.patient-prompt{margin:0 15px 16px;padding:13px 14px;border-radius:14px;background:rgba(16,37,44,.78);color:white;display:flex;align-items:center;justify-content:space-between;font-size:13px;box-shadow:0 14px 34px rgba(16,37,44,.18)}
+.hospital-workflow{max-width:320px;padding:15px;display:flex;flex-direction:column;align-items:stretch;gap:8px;overflow:visible;background:rgba(255,255,255,.9)}
+.workflow-node{display:grid;gap:4px;padding:12px;border-radius:13px;background:#f7faf7;border:1px solid rgba(16,37,44,.08)}
+.workflow-node span{font-size:10px;letter-spacing:.14em;color:var(--teal);font-weight:700}
+.workflow-node strong{font-size:13px;line-height:1.1}
+.workflow-node small{font-size:11px;line-height:1.25;color:#738288}
+.node-review{background:#edf7f4;border-color:rgba(0,123,128,.18)}
+.node-approve{background:#f6faf8}
+.workflow-arrow{align-self:center;color:#8ea3a4;transform:rotate(90deg)}
+.workflow-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px}
+.workflow-checklist span{display:flex;align-items:center;gap:6px;justify-content:center;padding:9px 8px;border-radius:999px;background:#eef5f1;color:#496166;font-size:10px}
+.workflow-checklist svg{color:var(--teal)}
+.journey-video-card{max-width:288px}
+.video-hero{height:138px;background:linear-gradient(145deg,#cfe5f7,#9cc4de);display:grid;place-items:center;position:relative;color:white}
+.video-hero div{width:66px;height:66px;border-radius:50%;background:rgba(16,37,44,.46);display:grid;place-items:center;box-shadow:0 18px 42px rgba(16,37,44,.22)}
+.video-hero span{position:absolute;top:14px;right:14px;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:11px}
+.video-details{padding:16px}
+.video-details strong{font-size:15px}
+.video-details p{font-size:11px;line-height:1.38;color:#718289;margin:7px 0 14px}
+.chapter-track{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:7px}
+.chapter-track i{height:26px;border-radius:8px;background:#dce7ec;border:1px solid rgba(16,37,44,.07)}
+.chapter-track i:first-child{background:#89d7d3}
+.iphone-15-frame{width:clamp(138px,11vw,172px);aspect-ratio:1179/2556;padding:7px;position:relative;border-radius:clamp(30px,2.9vw,39px);background:linear-gradient(145deg,#0b0d0e,#3f4344 42%,#080909);box-shadow:0 22px 56px rgba(16,37,44,.22),inset 0 0 0 1px rgba(255,255,255,.28),inset 0 0 0 3px rgba(0,0,0,.72)}
+.iphone-screen{height:100%;border-radius:clamp(24px,2.35vw,32px);background:#fbfcfb;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:28px 13px 14px;color:var(--ink)}
+.dynamic-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:54px;height:17px;border-radius:999px;background:#050708;box-shadow:inset -10px 0 18px rgba(255,255,255,.04)}
+.iphone-button{position:absolute;background:#1a1d1e;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.iphone-button-left-top{left:-3px;top:62px;width:3px;height:23px}
+.iphone-button-left-mid{left:-3px;top:103px;width:3px;height:37px}
+.iphone-button-left-low{left:-3px;top:150px;width:3px;height:37px}
+.iphone-button-right{right:-3px;top:118px;width:3px;height:54px}
+.phone-status{width:100%;display:flex;justify-content:space-between;font-size:9px;font-weight:700;margin-bottom:18px}
+.iphone-screen>svg{color:var(--teal);margin-bottom:14px}
+.phone-message{align-self:flex-start;width:90%;padding:11px 12px;border-radius:15px 15px 15px 4px;background:#eef4f1;font-size:11px;line-height:1.18;font-weight:620;margin-bottom:10px}
+.phone-video{width:100%;height:86px;border-radius:14px;background:linear-gradient(145deg,#c9e9e5,#83c5c7);display:grid;place-items:center;color:white;box-shadow:0 12px 24px rgba(0,123,128,.16)}
+.phone-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}
+.phone-actions span{display:flex;align-items:center;justify-content:center;gap:4px;height:28px;border-radius:999px;background:#eef5f1;color:#52666b;font-size:9px}
 .value{background:#f5f6f3;padding:10vw 5vw 6vw}
 .value>h2{max-width:1250px;margin:0 0 5.5vw}
 .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -355,8 +364,8 @@ to{opacity:1;transform:none}
 .benefit-content-card p{font-size:17px;margin-bottom:0}
 .benefit-content-card a{margin-top:28px;padding:12px 18px}
 .journey{grid-template-columns:1fr 1fr}
-.journey-card{min-height:430px}
-.journey-visual{height:245px}
+.journey-card{min-height:500px}
+.journey-visual{height:300px}
 .comparison-grid{grid-template-columns:1fr}
 .comparison-card{min-height:360px;padding:54px 7vw}
 .comparison-card h3{margin-bottom:52px}
@@ -400,12 +409,12 @@ to{opacity:1;transform:none}
 .benefit-content-card{padding:28px}
 .benefit-content-card h3{font-size:30px}
 .journey{grid-template-columns:1fr}
-.journey-card{min-height:420px;padding:24px}
+.journey-card{min-height:500px;padding:24px}
 .journey-card h3{font-size:28px}
 .journey-card p{font-size:13px}
-.journey-visual{height:245px;margin:20px 0}
-.journey-mini-window,.video-fragment,.journey-topic-grid{width:86%}
-.phone-fragment{width:52%}
+.journey-visual{height:300px;margin:20px 0}
+.journey-screen,.journey-video-card,.hospital-workflow{width:92%}
+.iphone-15-frame{width:150px}
 .comparison-card{min-height:330px;padding:42px 6vw}
 .comparison-card li{font-size:15px}
 .comparison-brand{top:38px;left:6vw;right:6vw}

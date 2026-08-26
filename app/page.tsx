@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { CalendarClock, Check, ClipboardCheck, Languages, MessageCircle, Play, RefreshCcw, Route } from "lucide-react";
+import { ArrowRight, CalendarClock, Check, ClipboardCheck, Languages, MessageCircle, Play, RefreshCcw, Route } from "lucide-react";
 import { flushSync } from "react-dom";
 import { FooterLanguage } from "./components/FooterLanguage";
 import { Trans, useT, type DictionaryKey } from "./components/I18n";
@@ -96,17 +96,18 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
   if (kind === "before") {
     return (
       <div className="journey-visual journey-visual-before" aria-hidden="true">
-        <div className="journey-mini-window">
-          <div className="tool-panel-top"><i/><i/><i/><span>Patient explainer</span></div>
-          <div className="journey-explainer">
-            <span>What this means</span>
-            <strong>Before your procedure</strong>
-            <p>Simple steps for fasting, arrival and medication preparation.</p>
+        <div className="journey-screen journey-screen-before">
+          <div className="journey-card-header"><span>Prep guide</span><strong>Ready</strong></div>
+          <div className="prep-stack">
+            <div><Check size={15}/><span>Fasting window</span><strong>10:00 PM</strong></div>
+            <div><CalendarClock size={15}/><span>Arrival time</span><strong>8:30 AM</strong></div>
+            <div><ClipboardCheck size={15}/><span>Bring ID + referral</span><strong>Set</strong></div>
           </div>
-          <div className="journey-step-row"><Check size={14}/><span>Fasting explained</span></div>
-          <div className="journey-step-row"><CalendarClock size={14}/><span>Arrival timing</span></div>
+          <div className="patient-prompt">
+            <span>Ask about preparation...</span>
+            <ArrowRight size={15}/>
+          </div>
         </div>
-        <div className="journey-soft-bar"><ClipboardCheck size={16}/><span>Clear guidance before care</span></div>
       </div>
     );
   }
@@ -114,16 +115,29 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
   if (kind === "hospital") {
     return (
       <div className="journey-visual journey-visual-hospital" aria-hidden="true">
-        <div className="journey-mini-window">
-          <div className="tool-panel-top"><i/><i/><i/><span>Clinical review</span></div>
-          <div className="journey-review-grid">
-            <div><small>Care pathway</small><strong>Endoscopy</strong></div>
-            <div><small>Status</small><strong>Confirmed</strong></div>
+        <div className="hospital-workflow">
+          <div className="workflow-node node-source">
+            <span>01</span>
+            <strong>Care pathway</strong>
+            <small>Endoscopy preparation</small>
           </div>
-          <div className="journey-step-row"><Check size={14}/><span>Instructions approved</span></div>
-          <div className="journey-step-row"><Check size={14}/><span>Ready for patient</span></div>
+          <ArrowRight className="workflow-arrow" size={18}/>
+          <div className="workflow-node node-review">
+            <span>02</span>
+            <strong>Clinical review</strong>
+            <small>Medication, diet, warning signs</small>
+          </div>
+          <ArrowRight className="workflow-arrow" size={18}/>
+          <div className="workflow-node node-approve">
+            <span>03</span>
+            <strong>Approved</strong>
+            <small>Patient-ready explanation</small>
+          </div>
+          <div className="workflow-checklist">
+            <span><Check size={13}/> Plain language</span>
+            <span><Check size={13}/> Clinician confirmed</span>
+          </div>
         </div>
-        <div className="journey-soft-bar journey-soft-bar-dark"><Check size={16}/><span>Clinician approved</span></div>
       </div>
     );
   }
@@ -131,31 +145,41 @@ function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home
   if (kind === "after") {
     return (
       <div className="journey-visual journey-visual-after" aria-hidden="true">
-        <div className="video-fragment">
-          <div className="video-preview"><Play size={23} fill="currentColor"/></div>
-          <div className="video-meta">
-            <span>Visual recovery explanation</span>
-            <i><b/></i>
+        <div className="journey-video-card">
+          <div className="video-hero">
+            <div><Play size={24} fill="currentColor"/></div>
+            <span>75+ languages</span>
+          </div>
+          <div className="video-details">
+            <strong>Recovery video</strong>
+            <p>Diet, activity, medication and follow-up explained in chapters.</p>
+            <div className="chapter-track"><i/><i/><i/></div>
           </div>
         </div>
-        <div className="journey-topic-grid"><span>Diet</span><span>Symptoms</span><span>Medicine</span></div>
       </div>
     );
   }
 
   return (
     <div className="journey-visual journey-visual-home" aria-hidden="true">
-      <div className="phone-fragment">
-        <div className="phone-pill"/>
-        <MessageCircle size={22}/>
-        <div className="message-card">
-          <span>Your recovery video is ready</span>
-          <div><Play size={18} fill="currentColor"/></div>
+      <div className="iphone-15-frame">
+        <i className="iphone-button iphone-button-left-top"/>
+        <i className="iphone-button iphone-button-left-mid"/>
+        <i className="iphone-button iphone-button-left-low"/>
+        <i className="iphone-button iphone-button-right"/>
+        <div className="iphone-screen">
+          <div className="dynamic-island"/>
+          <div className="phone-status"><span>9:41</span><span>5G</span></div>
+          <MessageCircle size={19}/>
+          <div className="phone-message">Your recovery video is ready</div>
+          <div className="phone-video">
+            <Play size={18} fill="currentColor"/>
+          </div>
+          <div className="phone-actions">
+            <span><RefreshCcw size={12}/> Replay</span>
+            <span><Languages size={12}/> Translate</span>
+          </div>
         </div>
-      </div>
-      <div className="journey-topic-grid journey-topic-grid-home">
-        <span><RefreshCcw size={13}/>Replay</span>
-        <span><Languages size={13}/>Translate</span>
       </div>
     </div>
   );
