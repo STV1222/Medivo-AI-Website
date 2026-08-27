@@ -88,8 +88,78 @@ const journeyCards = [
   { step: "04", kind: "home", titleKey: "journey.home.title", bodyKey: "journey.home.body" },
 ] satisfies { step: string; kind: "before" | "hospital" | "after" | "home"; titleKey: DictionaryKey; bodyKey: DictionaryKey }[];
 
+type Translate = (key: DictionaryKey) => string;
+
 function Logo({ priority = false }: { priority?: boolean }) {
   return <Image className="brand-logo" src="/medivo-logo-white-v2.png" alt="Medivo AI" width="1006" height="205" priority={priority} unoptimized />;
+}
+
+function WorkflowSceneContent({ index, t }: { index: number; t: Translate }) {
+  return (
+    <>
+      {index === 0 && (
+        <div className="workflow-scene scene-prepare">
+          <div className="workflow-browser">
+            <div className="browser-bar"><i /><i /><i /><span>Medivo AI</span></div>
+            <div className="browser-body">
+              <p className="field-label">{t("workflow.field")}</p>
+              <div className="select-control">{t("workflow.endoscopy")} <span>⌄</span></div>
+              <div className="select-menu">
+                <span>{t("workflow.endoscopy")}</span>
+                <span>{t("workflow.cardiology")}</span>
+                <span>{t("workflow.orthopaedics")}</span>
+                <span>{t("workflow.medicationReview")}</span>
+              </div>
+              <div className="brief-card">
+                <b>{t("workflow.pathway")}</b>
+                <p>{t("workflow.pathwayBody")}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {index === 1 && (
+        <div className="workflow-scene scene-review">
+          <div className="workflow-browser review-browser">
+            <div className="browser-bar"><i /><i /><i /><span>{t("workflow.clinicalReview")}</span></div>
+            <div className="browser-body">
+              <div className="review-row"><span>{t("workflow.procedure")}</span><b>{t("workflow.confirmed")}</b></div>
+              <div className="review-row"><span>{t("workflow.diet")}</span><b>{t("workflow.confirmed")}</b></div>
+              <div className="review-row"><span>{t("workflow.medChanges")}</span><b>{t("workflow.confirmed")}</b></div>
+              <div className="review-note">
+                <strong>{t("workflow.ready")}</strong>
+                <p>{t("workflow.reviewed")}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {index === 2 && (
+        <div className="workflow-scene scene-create">
+          <div className="workflow-browser create-browser">
+            <div className="browser-bar"><i /><i /><i /><span>{t("workflow.videoCreation")}</span></div>
+            <div className="browser-body">
+              <div className="create-status">
+                <span>{t("workflow.createVideo")}</span>
+                <h3>{t("workflow.generating")}</h3>
+                <div className="generation-meter"><i /></div>
+                <div className="generation-steps">
+                  <p><b /> {t("workflow.step1")}</p>
+                  <p><b /> {t("workflow.step2")}</p>
+                  <p><b /> {t("workflow.step3")}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {index === 3 && (
+        <div className="workflow-scene scene-deliver">
+          <Image src="/workflow-deliver.png" alt="" fill sizes="(max-width: 900px) 82vw, 46vw" unoptimized />
+        </div>
+      )}
+    </>
+  );
 }
 
 function JourneyVisual({ kind }: { kind: "before" | "hospital" | "after" | "home" }) {
@@ -355,64 +425,21 @@ export default function Home() {
         <div className="workflow-body">
           <div className="workflow-visual">
           <div className={`workflow-showcase stage-${active}`} aria-hidden="true">
-            <div className="workflow-scene scene-prepare">
-              <div className="workflow-browser">
-                <div className="browser-bar"><i /><i /><i /><span>Medivo AI</span></div>
-                <div className="browser-body">
-                  <p className="field-label">{t("workflow.field")}</p>
-                  <div className="select-control">{t("workflow.endoscopy")} <span>⌄</span></div>
-                  <div className="select-menu">
-                    <span>{t("workflow.endoscopy")}</span>
-                    <span>{t("workflow.cardiology")}</span>
-                    <span>{t("workflow.orthopaedics")}</span>
-                    <span>{t("workflow.medicationReview")}</span>
-                  </div>
-                  <div className="brief-card">
-                    <b>{t("workflow.pathway")}</b>
-                    <p>{t("workflow.pathwayBody")}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="workflow-scene scene-review">
-              <div className="workflow-browser review-browser">
-                <div className="browser-bar"><i /><i /><i /><span>{t("workflow.clinicalReview")}</span></div>
-                <div className="browser-body">
-                  <div className="review-row"><span>{t("workflow.procedure")}</span><b>{t("workflow.confirmed")}</b></div>
-                  <div className="review-row"><span>{t("workflow.diet")}</span><b>{t("workflow.confirmed")}</b></div>
-                  <div className="review-row"><span>{t("workflow.medChanges")}</span><b>{t("workflow.confirmed")}</b></div>
-                  <div className="review-note">
-                    <strong>{t("workflow.ready")}</strong>
-                    <p>{t("workflow.reviewed")}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="workflow-scene scene-create">
-              <div className="workflow-browser create-browser">
-                <div className="browser-bar"><i /><i /><i /><span>{t("workflow.videoCreation")}</span></div>
-                <div className="browser-body">
-                  <div className="create-status">
-                    <span>{t("workflow.createVideo")}</span>
-                    <h3>{t("workflow.generating")}</h3>
-                    <div className="generation-meter"><i /></div>
-                    <div className="generation-steps">
-                      <p><b /> {t("workflow.step1")}</p>
-                      <p><b /> {t("workflow.step2")}</p>
-                      <p><b /> {t("workflow.step3")}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="workflow-scene scene-deliver">
-              <Image src="/workflow-deliver.png" alt="" fill sizes="(max-width: 900px) 82vw, 46vw" unoptimized />
-            </div>
+            {workflow.map((_, index) => <WorkflowSceneContent key={index} index={index} t={t} />)}
           </div>
           <div className="step-indicator">{workflow.map((_, i) => <button key={i} className={active === i ? "active" : ""} onClick={() => document.querySelector(`[data-workflow-step='${i}']`)?.scrollIntoView({behavior:"smooth"})} aria-label={`View workflow step ${i + 1}`}><i/></button>)}</div>
           </div>
           <div className="workflow-copy">
-            {workflow.map((item, i) => <article key={item.step} data-workflow-step={i}><p className="section-label">{item.step}</p><h3>{t(item.titleKey)}</h3><p>{t(item.bodyKey)}</p></article>)}
+            {workflow.map((item, i) => (
+              <article key={item.step} data-workflow-step={i}>
+                <p className="section-label">{item.step}</p>
+                <h3>{t(item.titleKey)}</h3>
+                <p>{t(item.bodyKey)}</p>
+                <div className={`workflow-mobile-showcase workflow-showcase stage-${i}`} aria-hidden="true">
+                  <WorkflowSceneContent index={i} t={t} />
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
