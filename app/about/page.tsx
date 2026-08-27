@@ -58,10 +58,6 @@ export default function AboutPage() {
             <strong><Trans k="evidence.stat2.value" /></strong>
             <p><Trans k="evidence.stat2.label" /></p>
           </article>
-          <article>
-            <strong><Trans k="evidence.stat3.value" /></strong>
-            <p><Trans k="evidence.stat3.label" /></p>
-          </article>
         </div>
         <p className="evidence-source-note"><Trans k="evidence.source" /></p>
       </section>

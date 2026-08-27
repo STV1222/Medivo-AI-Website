@@ -481,7 +481,7 @@ to{opacity:1;transform:none}
 .about-evidence-head{display:grid;grid-template-columns:270px 1fr;gap:5vw;align-items:start;margin-bottom:5vw}
 .about-evidence-head h2{font-size:clamp(52px,7vw,112px);line-height:.92;letter-spacing:-.065em;font-weight:520;margin:0;max-width:1320px}
 .about-evidence-head h2+ p{font-size:18px;line-height:1.6;color:#4d6065;max-width:690px;margin:44px 0 0}
-.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .evidence-grid article{min-height:310px;background:#f6f6f2;border:1px solid rgba(16,27,32,.08);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;justify-content:space-between}
 .evidence-grid strong{font-size:clamp(56px,7vw,108px);line-height:.9;letter-spacing:-.07em;font-weight:480;color:var(--teal)}
 .evidence-grid p{font-size:16px;line-height:1.45;color:#536166;margin:42px 0 0}
