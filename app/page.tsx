@@ -518,6 +518,10 @@ export default function Home() {
                     aria-label={t(item.altKey)}
                   />
                   <span className="benefit-pill">{t(item.labelKey)}</span>
+                  <span className="benefit-mobile-copy">
+                    <strong>{t(item.titleKey)}</strong>
+                    <span>{t(item.bodyKey)}</span>
+                  </span>
                 </button>
               </Fragment>
             ))}
